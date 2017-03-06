@@ -42,7 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-
+@import 'variables';
 @import 'styles/normalize';
 @import 'styles/typography';
 @import 'styles/elements';
@@ -50,7 +50,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import 'styles/navigation';
 @import 'styles/accessibility';
 @import 'styles/alignments';
-
 @import 'styles/clearings';
 @import 'styles/widgets';
 @import 'styles/content';
