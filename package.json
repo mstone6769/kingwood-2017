@@ -1,0 +1,27 @@
+{
+  "name": "kingwood-2017",
+  "version": "1.0.0",
+  "description": "Wordpress theme for KingwoodChurch.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d && gulp",
+    "stop": "docker-compose down",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstone6769/kingwood-2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^2.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/mstone6769/kingwood-2017/issues"
+  },
+  "homepage": "https://github.com/mstone6769/kingwood-2017#readme"
+}
