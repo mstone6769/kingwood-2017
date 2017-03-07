@@ -1,13 +1,19 @@
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body,
 button,
 input,
 select,
 textarea {
   color: $black;
-  font-family: 'Gotham', sans-serif;
+  font-family: $serif-font;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -19,6 +25,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: $sans-font;
   clear: both;
 }
 

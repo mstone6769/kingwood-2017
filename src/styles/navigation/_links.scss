@@ -1,0 +1,25 @@
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: $primary;
+}
+
+a:visited {
+  color: $blue-active;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color:$blue-active;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
