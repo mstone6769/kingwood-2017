@@ -15,14 +15,24 @@
 get_header(); ?>
 
 
+	<div class="hero">
+		<div class="hero-content">
+			<h1 class="headline">Welcome Home</h1>
+			<p class="text">Service Times: Sundays &bull; 9:00am &bull; 10:30am</p>
 
-	<div id="primary" class="content-area">
+		</div>
+	</div>
+	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
-			<div class="hero">
-				<div class="hero-content">
-					<h1>Welcome Home</h1>
+			<div class="media-block current-series clear">
+				<div class="media-content">
+					<h2>Current Series</h2>
+					<p>Blurb</p>
 				</div>
+
+				<img class="media-image" src="http://www.kingwoodchurch.com/wp-content/uploads/2017/02/I-AM-Web-Banner.jpg">
 			</div>
+			
 			<?php
 			while ( have_posts() ) : the_post();
 

@@ -14,9 +14,10 @@ $media-query-navigation: "screen and (min-width: 70em)";
   left: 0;
   right: 0;
   z-index: 1;
-  will-change: transform;
-  background-color: transparent;
-  transition: transform 200ms ease, background-color 200ms linear;
+  will-change: transform, background-color, box-shadow;
+  background-color: $white;
+  transition: transform 200ms ease, background-color 200ms linear, box-shadow 200ms linear;
+  box-shadow: 0 2px 20px rgba(black, 0);
   &.pinned{
     transform: translateY(0%);
   }
@@ -24,7 +25,7 @@ $media-query-navigation: "screen and (min-width: 70em)";
       transform: translateY(-100%);
   }
   &.not-at-top {
-    background-color: rgba($primary, 0.9);
+    box-shadow: 0 2px 20px rgba(black, 0.2);
   }
 }
 
@@ -59,9 +60,19 @@ $media-query-navigation: "screen and (min-width: 70em)";
   }
 }
 
+
 .logo {
-  fill: $white;
-  color: $black;
+  fill: $black;
+  color: $white;
+  transition: fill 200ms ease;
+}
+
+.site-title > a {
+  &:hover, &:focus {
+    > .logo {
+      fill: $primary-active;
+    }
+  }
 }
 
 
@@ -100,13 +111,12 @@ $media-query-navigation: "screen and (min-width: 70em)";
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: $white;
+  color: $black;
   //font-family: $sans-font;
   font-weight: 600;
-  text-shadow: 0 1px 10px rgba(black, 0.5);
   &:hover,
   &:focus {
-    color: $cream;
+    color: $primary-active;
   }
 }
 
