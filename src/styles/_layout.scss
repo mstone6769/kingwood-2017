@@ -5,6 +5,10 @@
   display: none;
 }
 
+.site {
+  background-color: white;
+}
+
 .site-content {
   //padding: 1rem;
 }
@@ -13,14 +17,20 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.promo {
+  padding-top: 1rem;
 }
 
 
 .hero {
-  height: calc(100vh - 102px);
+  height: 70vh;
   background-color: $black;
   position: relative;
-  background: $black url('http://lorempixel.com/1600/1000/nature/') center center no-repeat;
+  background: $black url('http://placehold.it/1600x900') center center no-repeat;
   background-size: cover;
 }
 
@@ -51,14 +61,88 @@
 
 .current-series {
   background-color: $cream;
+  > .media-body {
+    padding: 1rem;
+  }
 }
 
-.media-block {
-  > .media-content {
-    float: left;
+.grid {
+  list-style-type: none;
+  margin: 0 -1rem;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  > * {
+    width: 100%;
+    padding: 1rem;
   }
-  > .media-image {
-    float: right;
-    max-width: 50%;
+}
+
+.grid-tight > * {
+  padding-top: 0;
+}
+
+.grid-2 > * {
+  @media(min-width: 640px) {
+    width: 50%;
   }
+}
+
+.grid-4 > * {
+  @media(min-width: 640px) {
+    width: 50%;
+  }
+  @media(min-width: 900px) {
+    width: 25%;
+  }
+}
+
+%regular-text {
+  text-decoration: none;
+  color: $black;
+}
+
+.card {
+  display: block;
+  img {
+    display: block;
+  }
+  @extend %regular-text;
+  h1, h2, h3, h4, h5, h6 {
+    @extend %regular-text;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 0;
+    @extend %regular-text;
+  }
+
+  &:hover, &:focus {
+    h1, h2, h3, h4, h5, h6 {
+      color: $primary-active;
+    }
+  }
+  &.shade {
+    background-color: rgba(black, 0.1);
+    h2 {
+      margin: 0;
+      padding: 1rem;
+    }
+    img {
+
+    }
+  }
+}
+
+.wrapper {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  &.shade {
+    background-color: $cream;
+  }
+}
+
+.site-footer {
+  background-color: $cream;
 }

@@ -4,28 +4,40 @@
 ## Menus
 --------------------------------------------------------------*/
 
-$media-query-navigation: "screen and (min-width: 70em)";
+$media-query-navigation: "screen and (min-width: 860px)";
+
+.site {
+  padding-top: 100px;
+}
 
 .site-header {
-  padding: 1em;
+  padding: 0;
   padding-right: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  will-change: transform, background-color, box-shadow;
+  will-change: transform, box-shadow;
   background-color: $white;
-  transition: transform 200ms ease, background-color 200ms linear, box-shadow 200ms linear;
-  box-shadow: 0 2px 20px rgba(black, 0);
+  transition: transform 200ms ease, box-shadow 200ms linear;
   &.pinned{
     transform: translateY(0%);
+    .main-navigation {
+      transform: translateY(0%);
+    }
   }
   &.unpinned {
       transform: translateY(-100%);
+      .main-navigation {
+        transform: translateY(-100%);
+      }
   }
   &.not-at-top {
-    box-shadow: 0 2px 20px rgba(black, 0.2);
+    transform: translateY(-100%);
+    &.pinned .main-navigation{
+      box-shadow: 0 2px 20px rgba(black, 0.2);
+    }
   }
 }
 
@@ -37,18 +49,19 @@ $media-query-navigation: "screen and (min-width: 70em)";
 
 
 .site-branding {
-  float: left;
+  padding: 0.5em;  
 }
 
 
 .site-title {
-  min-width: 7em;
+  min-width: 4em;
+  max-width: 6em;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   > a {
     display: block;
     width: 100%;
-    padding-bottom: 29.09090909%;
+    padding-bottom: 86.9565217391304%;
     position: relative;
     > .logo {
       position: absolute;
@@ -62,7 +75,8 @@ $media-query-navigation: "screen and (min-width: 70em)";
 
 
 .logo {
-  fill: $black;
+  fill: $primary;
+  
   color: $white;
   transition: fill 200ms ease;
 }
@@ -75,32 +89,52 @@ $media-query-navigation: "screen and (min-width: 70em)";
   }
 }
 
+.gradient {
+
+}
+
+.stop-1 {
+  stop-color: #3A3AAF;
+}
+.stop-2 {
+  stop-color: $primary-active;
+}
+
 
 .main-navigation {
   display: block;
-  float: right;
-  padding-top: 0.55em;
-  padding-bottom: 0.55em;
+  border-top: 1px solid gainsboro;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  box-shadow: 0 2px 20px rgba(black, 0);
+  will-change: transform, box-shadow;
+  transition: transform 200ms ease, box-shadow 200ms linear;
   @media #{$media-query-navigation} {
-    width: auto;
+    
   }
+}
+
+.menu-top-nav-container {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
 }
 
 .main-navigation ul {
   display: none;
   list-style: none;
+  padding: 0;
   margin: 0;
-  padding-left: 0;
 }
 
 .main-navigation li {
   float: left;
   position: relative;
   width: 100%;
-
-  @media #{$media-query-navigation} {
-    width: auto;
-  }
 }
 
 
@@ -112,11 +146,23 @@ $media-query-navigation: "screen and (min-width: 70em)";
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: $black;
-  //font-family: $sans-font;
+  font-family: $sans-font;
+  text-align: center;
   font-weight: 600;
   &:hover,
   &:focus {
     color: $primary-active;
+  }
+}
+
+.menu-top-nav-container > ul > li > a {
+  @media(min-width: 960px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media(min-width: 1020px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -176,12 +222,27 @@ $media-query-navigation: "screen and (min-width: 70em)";
   display: block;
 }
 
+.menu-toggle {
+  min-width: 100%;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-family: $sans-font;
+  border: none;
+  border-radius: 0;
+}
+
 @media #{$media-query-navigation} {
   .menu-toggle {
     display: none;
   }
   .main-navigation ul {
     display: block;
+    width: 100%;
+  }
+
+  .main-navigation li {
+    float: left;
+    width: auto;
   }
 }
 
