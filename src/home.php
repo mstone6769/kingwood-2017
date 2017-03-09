@@ -27,6 +27,13 @@ get_header(); ?>
 					<div class="grid grid-2">
 
 						<div class="column">
+							<a href="" class="card shade">
+								<img src="http://placehold.it/640x360">
+								<h2>Message Name</h2>
+							</a>
+						</div>
+
+						<div class="column">
 							<h2>Service Information</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales, ligula in tincidunt gravida, libero odio finibus eros, nec congue nisi sem non massa.</p>
 							<h3>Service Times</h3>
@@ -34,12 +41,7 @@ get_header(); ?>
 							<h3>Location</h3>
 							<p>100 Harvest Way Alabaster, AL 35007</p>
 						</div>
-						<div class="column">
-							<a href="" class="card shade">
-								<img src="http://placehold.it/640x360">
-								<h2>Message Name</h2>
-							</a>
-						</div>
+						
 						
 					</div>
 					<ul class="grid grid-4">
@@ -74,12 +76,7 @@ get_header(); ?>
 				<div class="container">
 					
 					<div class="grid grid-2">
-						<div>
-							<a href="" class="card shade">
-								<img src="http://placehold.it/640x360">
-								<h2>Easter (Next Big Event)</h2>
-							</a>
-						</div>
+						
 						<div>
 							<h2>Upcoming Events</h2>
 							<ul class="grid grid-2 grid-tight">
@@ -108,6 +105,12 @@ get_header(); ?>
 								  </a>
 								</li>
 							</ul>
+						</div>
+						<div>
+							<a href="" class="card shade">
+								<img src="http://placehold.it/640x360">
+								<h2>Easter (Next Big Event)</h2>
+							</a>
 						</div>
 					</div>
 					

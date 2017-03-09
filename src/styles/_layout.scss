@@ -140,6 +140,9 @@
   padding-bottom: 2rem;
   &.shade {
     background-color: $cream;
+    .card.shade {
+      background-color: $white;
+    }
   }
 }
 
