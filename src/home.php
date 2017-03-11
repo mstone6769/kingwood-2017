@@ -29,7 +29,7 @@ get_header(); ?>
 						<div class="column">
 							<a href="" class="card shade">
 								<img src="http://placehold.it/640x360">
-								<h2>Message Name</h2>
+								<h2><span>Latest Message:</span> The Awe of Salvation</h2>
 							</a>
 						</div>
 

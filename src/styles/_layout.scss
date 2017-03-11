@@ -112,6 +112,11 @@
     @extend %regular-text;
     margin-top: 1rem;
     margin-bottom: 0;
+    span {
+      font-weight: 200;
+      text-transform: uppercase;
+      font-size: 0.75em;
+    }
   }
   p {
     margin-top: 0;
