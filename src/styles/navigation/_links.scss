@@ -3,15 +3,16 @@
 --------------------------------------------------------------*/
 a {
   color: $primary;
+  text-decoration: none;
 }
 
-a:visited {
-  color: $blue-active;
-}
+// a:visited {
+//   color: $blue-active;
+// }
 
 a:hover,
-a:focus,
-a:active {
+a:focus {
+  text-decoration: none;
   color:$blue-active;
 }
 

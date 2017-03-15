@@ -44,7 +44,8 @@ function kingwood_2017_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'kingwood-2017' ),
+		'menu-1' => esc_html__( 'Top Nav', 'kingwood-2017' ),
+		'menu-2' => esc_html__( 'Footer Nav', 'kingwood-2017' ),
 	) );
 
 	/*

@@ -34,8 +34,10 @@ get_header(); ?>
 						</div>
 
 						<div class="column">
-							<h2>Service Information</h2>
+							<h2 class="section-header">Service Information</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales, ligula in tincidunt gravida, libero odio finibus eros, nec congue nisi sem non massa.</p>
+							<a class="cta-link">What to Expect</a>
+							<hr>
 							<h3>Service Times</h3>
 							<p>Sundays &bull; 9:00am &bull; 10:30am</p>
 							<h3>Location</h3>
@@ -78,7 +80,7 @@ get_header(); ?>
 					<div class="grid grid-2">
 						
 						<div>
-							<h2>Upcoming Events</h2>
+							<h2 class="section-header"><a href="">Upcoming Events</a></h2>
 							<ul class="grid grid-2 grid-tight">
 								<li>
 								  <a href="" class="card">
@@ -105,6 +107,7 @@ get_header(); ?>
 								  </a>
 								</li>
 							</ul>
+							<a href="" class="cta-link">See all</a>
 						</div>
 						<div>
 							<a href="" class="card shade">
@@ -116,67 +119,75 @@ get_header(); ?>
 					
 				</div>
 			</section>
-			<section class="wrapper">
+			<section class="wrapper cta-wrapper">
 				<div class="container">
-					<h2>Next Steps</h2>
-					<ul class="grid grid-4">
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>First Step</h3>
-								<p>One-session introductory class</p>
-							</a>
-						</li>
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>Water Baptism</h3>
-								<p>Publicly declare yourself for Jesus</p>
-							</a>
-						</li>
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>Life Streams</h3>
-								<p>Grow your spiritual life in interactive seminars</p>
-							</a>
-						</li>
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>Life Groups</h3>
-								<p>Meet new people. Experience life with a small group</p>
-							</a>
-						</li>
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>30 Serve</h3>
-								<p>Try out a ministry for 30 days</p>
-							</a>
-						</li>
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>Go Global</h3>
-								<p>Help spread Jesus’ message to all the world</p>
-							</a>
-						</li>
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>Become a Giver</h3>
-								<p>Take steps to become a tither</p>
-							</a>
-						</li>
-						<li>
-							<a class="card" href="">
-								<img src="http://placehold.it/640x360">
-								<h3>Need Help?</h3>
-								<p>Whatever you are going through, we would like to help you</p>
-							</a>
-						</li>
-					</ul>
+					<h2 class="text-center section-header">Next Steps</h2>
+					<div class="grid grid-4 collapse">
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+							<svg class="icon"><use xlink:href="#icon-first-step" /></svg>
+							<h3>First Step</h3>
+							<p>One-session introductory class</p>
+							<span class="button">Signup</span>
+						</a>
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+						  <svg class="icon"><use xlink:href="#icon-baptism" /></svg>
+							<h3>Water Baptism</h3>
+							<p>Publicly declare yourself for Jesus</p>
+							<span class="button">Signup</span>
+						</a>
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+							<svg class="icon"><use xlink:href="#icon-life-streams" /></svg>
+							<h3>Life Streams</h3>
+							<p>Grow your spiritual life in interactive seminars</p>
+							<span class="button">Signup</span>
+						</a>
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+							<svg class="icon"><use xlink:href="#icon-life-groups" /></svg>
+							<h3>Life Groups</h3>
+							<p>Meet new people. Experience life with a small group</p>
+							<span class="button">Signup</span>
+						</a>
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+							<svg class="icon"><use xlink:href="#icon-30-serve" /></svg>
+							<h3>30 Serve</h3>
+							<p>Try out a ministry for 30 days</p>
+							<span class="button">Signup</span>
+						</a>
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+							<svg class="icon"><use xlink:href="#icon-missions" /></svg>
+							<h3>Go Global</h3>
+							<p>Help spread Jesus’ message to all the world</p>
+							<span class="button">Signup</span>
+						</a>
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+							<svg class="icon"><use xlink:href="#icon-give" /></svg>
+							<h3>Become a Giver</h3>
+							<p>Take steps to become a tither</p>
+							<span class="button">Signup</span>
+						</a>
+						<a
+						  href=""
+						  class="card card-centered card-icon">
+							<svg class="icon"><use xlink:href="#icon-help" /></svg>
+							<h3>Need Help?</h3>
+							<p>Whatever you are going through, we would like to help you</p>
+							<span class="button">Signup</span>
+						</a>
+					</div>
 				</div>
 			</section>
 			

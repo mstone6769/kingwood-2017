@@ -1,6 +1,37 @@
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+
+.pic-shade {
+  background: linear-gradient(to bottom,  rgba(black,0.2) 0%,rgba(black,0.5) 30%,rgba(black,0.8) 80%,rgba(black,0.9) 100%);
+}
+
+
+.account-login-wrapper {
+  position: relative;
+  height: 4px;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: $cream;
+  text-align: right;
+}
+.account-login {
+  font-family: $sans-font;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 0;
+  right: 1em;
+  background-color: $cream;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: $primary;
+  &:hover, &:focus {
+    color: $primary-active;
+  }
+}
+
 .symbol-defs {
   display: none;
 }
@@ -78,6 +109,17 @@
   }
 }
 
+.grid.collapse {
+  margin-left: 0;
+  margin-right: 0;
+  > * {
+    padding: 0;
+  }
+  > .card {
+    padding: 2rem 1rem 0;
+  }
+}
+
 .grid-tight > * {
   padding-top: 0;
 }
@@ -129,7 +171,7 @@
     }
   }
   &.shade {
-    background-color: rgba(black, 0.1);
+    background-color: $cream;
     h2 {
       margin: 0;
       padding: 1rem;
@@ -140,6 +182,11 @@
   }
 }
 
+
+.card-centered {
+  text-align: center;
+}
+
 .wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -147,10 +194,73 @@
     background-color: $cream;
     .card.shade {
       background-color: $white;
+      box-shadow: 0 1px 10px rgba(black, 0.1);
     }
   }
 }
 
+
+.card-icon {
+//  padding-top: 100%;
+}
+
+.card > .icon {
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // width: 100%;
+  // height: 100%;
+}
+
+.cta-link {
+  font-weight: 700;
+  font-family: $sans-font;
+}
+
+
+
+.cta-wrapper  .card {
+  h1, h2, h3, h4, h5, h6, p {
+    color: white;
+  }
+  will-change: background-color;
+  background-color: rgba(black, 0);
+  transition: background-color 250ms linear;
+  .icon {
+    height: 3em;
+    width: 3em;
+    color: white;
+    transition: transform 250ms ease;
+    will-change: transform;
+  }
+  &:hover, &:focus {
+    background-color: rgba(black, 0.2);
+    .icon {
+      transform: scale(1.25);
+    }
+  }
+}
+
+
+
+
+.cta-wrapper {
+  background-color: $primary;
+  color: white;
+}
+
 .site-footer {
   background-color: $cream;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.section-header {
+  font-weight: 300;
+  @media(min-width: 640px) {
+    font-size: 2em;
+  }
 }

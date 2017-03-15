@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/mstone6769/kingwood-2017/issues"
   },
-  "homepage": "https://github.com/mstone6769/kingwood-2017#readme"
+  "homepage": "https://github.com/mstone6769/kingwood-2017#readme",
+  "dependencies": {
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sourcemaps": "^2.4.1"
+  }
 }
