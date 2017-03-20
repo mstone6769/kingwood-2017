@@ -538,7 +538,7 @@ info@kingwoodchurch.com</p>
   </symbol>
     
 </svg>
-<svg>
+<!-- <svg>
   
   <defs>
     <linearGradient class="gradient" id="blueGradient" x1="0" x2="0" y1="0" y2="1">
@@ -546,14 +546,14 @@ info@kingwoodchurch.com</p>
       <stop offset="100%" class="stop-2" />
     </linearGradient>
   </defs>
-</svg>
+</svg> -->
 
 <?php wp_footer(); ?>
 <script type="text/javascript">
   var myElement = document.querySelector("#masthead");
   // construct an instance of Headroom, passing the element
   var headroom  = new Headroom(myElement, {
-    offset : 100,
+    offset : 200,
     tolerance: 5,
     classes: {
       initial: 'will-pin',

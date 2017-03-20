@@ -15,21 +15,19 @@
 get_header(); ?>
 
 
+
+
 	<div class="hero">
-		<ul id="slides" class="slideshow" data-slideshow-interval="3500">
-		  <li>
-		    <img src="/wp-content/themes/kingwood-2017/images/banner/01.jpg">
-		  </li>
-		  <li>
-		    <img src="/wp-content/themes/kingwood-2017/images/banner/02.jpg">
-		  </li>
-		  <li>
-		    <img src="/wp-content/themes/kingwood-2017/images/banner/03.jpg">
-		  </li>
-		  
-		</ul>
+		<?php if (shortcode_exists( 'simple-slider' )) : do_shortcode( '[simple-slider]' ); endif; ?>
+
+		<div class="pic-shade"></div>
 		<div class="hero-content">
 			<h1 class="headline">Welcome Home</h1>
+			<p class="text">Sundays &bull; 9:00am &bull; 10:30am</p>
+			<p class="text">100 Harvest Way, Alabaster, AL</p>
+
+		</div>
+		<a href="#main" class="arrow bounce"><?php esc_html_e( 'Service Information', 'kingwood-2017' ); ?></a>
 		</div>
 	</div>
 	<div id="primary" class="content-area">
@@ -174,7 +172,7 @@ get_header(); ?>
 						  href=""
 						  class="card card-centered card-icon">
 							<svg class="icon"><use xlink:href="#icon-missions" /></svg>
-							<h3>Go Global</h3>
+							<h3>Support Missions</h3>
 							<p>Help spread Jesus’ message to all the world</p>
 						</a>
 						<a
@@ -214,6 +212,9 @@ get_header(); ?>
 
 	<script type="text/javascript">
 		'use-strict';
+
+
+
 		var makeSlideshow = function( slideshowContainer, interval ) {
 		  
 		  var elements = {
@@ -226,6 +227,14 @@ get_header(); ?>
 		  var indexes = {
 		    current: 0
 		  };
+
+		  for (i = 0; i < elements.slides.length; i++) {
+		  	var image = elements.slides[i].querySelector('img');
+		  	var imageSource = image.getAttribute('src');
+		  	image.style.display = 'none';
+		  	elements.slides[i].style['backgroundImage'] = 'url(\'' + imageSource + '\')';
+
+		  }
 
 		  var getClass = function ( element ) {
 		    return element.getAttribute && element.getAttribute( 'class' ) || '';

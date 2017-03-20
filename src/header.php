@@ -27,25 +27,30 @@
     href="#content"><?php esc_html_e( 'Skip to content', 'kingwood-2017' ); ?></a>
   <header id="masthead" class="site-header" role="banner">
     <div class="account-login-wrapper">
-      <a
-        href=""
-        class="account-login">Login to My Kingwood</a>
+      <div class="container">
+        <a
+          href=""
+          class="account-login"><?php esc_html_e( 'Login to My Kingwood', 'kingwood-2017' ); ?></a>
+      </div>
     </div>
-    <div class="site-branding">
-
-      <?php
-      if ( is_front_page() && is_home() ) : ?>
-        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></h1>
-      <?php else : ?>
-        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></p>
-      <?php
-      endif;
-      ?>
-    </div><!-- .site-branding -->
+    
 
     <nav id="site-navigation" class="main-navigation" role="navigation">
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'kingwood-2017' ); ?></button>
-      <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+      <div class="container clear">
+        <div class="site-branding">
+
+          <?php
+          if ( is_front_page() && is_home() ) : ?>
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></h1>
+          <?php else : ?>
+            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></p>
+          <?php
+          endif;
+          ?>
+        </div><!-- .site-branding -->
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'kingwood-2017' ); ?></button>
+        <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+      </div>
     </nav><!-- #site-navigation -->
   </header><!-- #masthead -->
 
