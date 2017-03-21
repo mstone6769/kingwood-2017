@@ -25,6 +25,7 @@ get_header(); ?>
 			<h1 class="headline">Welcome Home</h1>
 			<p class="text">Sundays &bull; 9:00am &bull; 10:30am</p>
 			<p class="text">100 Harvest Way, Alabaster, AL</p>
+			<p><a class="button" href="#main">Service Information</a></p>
 
 		</div>
 		<a href="#main" class="arrow bounce"><?php esc_html_e( 'Service Information', 'kingwood-2017' ); ?></a>
@@ -45,11 +46,11 @@ get_header(); ?>
 
 						<div class="column">
 							<h2 class="section-header">Service Information</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales, ligula in tincidunt gravida, libero odio finibus eros, nec congue nisi sem non massa.</p>
-							<a class="cta-link">What to Expect</a>
+							<p class="section-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales, ligula in tincidunt gravida, libero odio finibus eros, nec congue nisi sem non massa.</p>
+							
 							<hr>
 							<h3>Service Times</h3>
-							<p>Sundays &bull; 9:00am &bull; 10:30am</p>
+							<p>Sundays &bull; 9:00am &bull; 10:30am <a class="cta-link">What to Expect</a></p>
 							<h3>Location</h3>
 							<p>100 Harvest Way Alabaster, AL 35007</p>
 						</div>
@@ -58,25 +59,25 @@ get_header(); ?>
 					</div>
 					<ul class="grid grid-4">
 						<li>
-						  <a href="" class="card">
+						  <a href="" class="card card-with-image">
 						  	<img src="/wp-content/themes/kingwood-2017/images/what-we-believe.jpg">
 						  	<h3>What We Believe</h3>
 						  </a>
 						</li>
 						<li>
-						  <a href="" class="card">
+						  <a href="" class="card card-with-image">
 						  	<img src="/wp-content/themes/kingwood-2017/images/kids.jpg">
-						  	<h3>Kids Programs</h3>
+						  	<h3>Children's Programs</h3>
 						  </a>
 						</li>
 						<li>
-						  <a href="" class="card">
+						  <a href="" class="card card-with-image">
 						  	<img src="/wp-content/themes/kingwood-2017/images/faq.jpg">
 						  	<h3>FAQs</h3>
 						  </a>
 						</li>
 						<li>
-						  <a href="" class="card">
+						  <a href="" class="card card-with-image">
 						  	<img src="/wp-content/themes/kingwood-2017/images/directions.jpg">
 						  	<h3>Directions</h3>
 						  </a>
@@ -132,6 +133,7 @@ get_header(); ?>
 			<section class="wrapper cta-wrapper">
 				<div class="container">
 					<h2 class="text-center section-header">Next Steps</h2>
+					<p class="text-center section-subheader">If you take the next step that God gives you, you will end up where you are supposed to go</p>
 					<div class="grid grid-4 collapse">
 						<a
 						  href=""
@@ -144,7 +146,7 @@ get_header(); ?>
 						  href=""
 						  class="card card-centered card-icon">
 						  <svg class="icon"><use xlink:href="#icon-baptism" /></svg>
-							<h3>Water Baptism</h3>
+							<h3>Baptism</h3>
 							<p>Publicly declare yourself for Jesus</p>
 						</a>
 						<a

@@ -41,9 +41,9 @@
 
           <?php
           if ( is_front_page() && is_home() ) : ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></h1>
+            <h1 class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></h1>
           <?php else : ?>
-            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></p>
+            <p class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></p>
           <?php
           endif;
           ?>

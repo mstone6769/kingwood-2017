@@ -26,7 +26,7 @@
 .content-area {
   background-color: $white;
   position: relative;
-  z-index: 3;
+  z-index: 888;
 }
 
 .promo {
@@ -127,6 +127,37 @@
   }
 }
 
+.card-with-image {
+  position: relative;
+  overflow: hidden;
+  background-color: $black;
+  transition: background-color 200ms linear;
+  img {
+    opacity: 0.6;
+    transition: transform 200ms ease, opacity 200ms linear;
+  }
+  &:hover, &:focus {
+    background-color: black;
+    h1, h2, h3, h4, h5, h6  {
+      color: white;
+    }
+    img {
+      transform: scale(1.1);
+      opacity: 0.5;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+    margin: 0;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
 
 .card-centered {
   text-align: center;
@@ -136,7 +167,9 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   &.shade {
-    background-color: $cream;
+    background: $cream url('images/upcoming-events.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     .card.shade {
       background-color: $white;
       box-shadow: 0 1px 10px rgba(black, 0.1);
@@ -196,8 +229,113 @@
 
 .site-footer {
   position: relative;
-  background-color: $cream;
+  background-color: $black;
+  color: rgba(white, 0.5);
+  a {
+    color: white;
+    font-family: $sans-font;
+    &:hover, &:focus {
+      color: $primary-active;
+    }
+  }
 }
+
+.site-info {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(white, 0.1);
+  padding-top: 1rem;
+}
+
+.site-footer-logo {
+  padding-top: 2rem;
+  .site-logo {
+    padding-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 640px) {
+    float: left;
+  }
+}
+
+.site-footer-menu {
+  @media (min-width: 640px) {
+    padding-top: 1.5rem;
+    float: right;
+    width: calc(100% - 14em);
+  }
+}
+
+.menu-footer-container {
+  font-family: $sans-font;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  a {
+    display: inline-block;
+    
+  }
+
+  a, p {
+    margin: 0;
+    padding: 0.5em 0;
+    @media (min-width: 640px) {
+      padding: 0.5em;
+    }
+  }
+
+  
+
+  @media (min-width: 640px) {
+    > ul > li {
+      float: left;
+      width: 50%;
+    }
+    > ul > li:nth-child(3) {
+      clear: left;
+    }
+    > ul > li > ul {
+      padding-bottom: 2rem;
+    }
+    > ul > li > ul > li {
+      float: left;
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 940px) {
+    > ul > li:nth-child(3) {
+      clear: none;
+    }
+    > ul > li {
+      float: left;
+      width: 40%;
+      &:nth-child(1) {
+        width: 35%;
+      }
+      &:nth-child(2) {
+        width: 25%;
+      }
+      
+    }
+    
+  }
+
+  
+
+  > ul > li > a {
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+}
+
+
 
 .text-center {
   text-align: center;
@@ -210,6 +348,20 @@
     font-size: 2em;
   }
 }
+
+.section-subheader {
+  font-family: $sans-font;
+  max-width: 640px;
+  &.text-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media(min-width: 640px) {
+    font-size: 1.5em;
+  }
+}
+
+
 
 .slideshow-container {
   position: absolute;

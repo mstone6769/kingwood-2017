@@ -4,7 +4,7 @@
 ## Menus
 --------------------------------------------------------------*/
 
-$media-query-navigation: "screen and (min-width: 940px)";
+$media-query-navigation: "screen and (min-width: 950px)";
 
 .site {
   // padding-top: 100px;
@@ -38,6 +38,7 @@ $media-query-navigation: "screen and (min-width: 940px)";
   font-weight: 600;
   will-change: transform;
   transition: transform 200ms ease;
+  letter-spacing: 0.2em;
   &:hover, &:focus {
     color: white;
   }
@@ -52,7 +53,7 @@ $media-query-navigation: "screen and (min-width: 940px)";
   top: 0;
   left: 0;
   right: 0;
-  z-index: 4;
+  z-index: 999;
   will-change: transform, box-shadow, background-color;
   background-color: rgba($primary, 0);
   transition: transform 200ms ease, box-shadow 200ms linear, background-color 200ms linear, padding-top 200ms ease;
@@ -99,7 +100,8 @@ $media-query-navigation: "screen and (min-width: 940px)";
 }
 
 
-.site-title {
+.site-logo {
+  font-size: 2em;
   width: 6em;
   padding: 0;
   margin: 0;
@@ -124,7 +126,7 @@ $media-query-navigation: "screen and (min-width: 940px)";
   transition: color 200ms linear;
 }
 
-.site-title > a {
+.site-logo > a {
   &:hover, &:focus {
     > .logo {
       color: $primary-active;
@@ -222,7 +224,7 @@ $media-query-navigation: "screen and (min-width: 940px)";
   //   padding-left: 1.5rem;
   //   padding-right: 1.5rem;
   // }
-  @media(min-width: 1020px) {
+  @media(min-width: 1080px) {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }

@@ -24,3 +24,22 @@ a:hover,
 a:active {
   outline: 0;
 }
+
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  min-width: 12em;
+  text-align: center;
+  border: none;
+  background-color: $primary;
+  color: white;
+  font-family: $sans-font;
+  font-weight: 600;
+  letter-spacing: .2em;
+  transition: background-color 200ms linear;
+  &:hover, &:focus {
+    color: white;
+    background-color: $primary-active;
+  }
+}
