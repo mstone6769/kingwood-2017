@@ -4,7 +4,7 @@
   "description": "Wordpress theme for KingwoodChurch.com",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose up -d && gulp",
+    "start": "docker-compose up -d",
     "stop": "docker-compose down",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
