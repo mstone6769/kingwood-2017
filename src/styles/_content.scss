@@ -25,12 +25,16 @@
 
 
 .entry-header {
-  background-color: $black;
+  background-color: $primary;
   color: white;
-  padding-top: 14rem;
-  padding-bottom: 8rem;
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  //box-shadow: 0 -5px 100px rgba(black, 0.1) inset;
   @media (min-width: 1200px) {
-    
+    padding-top: 14rem;
+    padding-bottom: 8rem;
   }
 }
 
@@ -43,6 +47,9 @@
   letter-spacing: .2em;
   text-transform: uppercase;
   font-weight: 100;
+  @media (min-width: 1200px) {
+    font-size: 3em;
+  }
 }
 
 .page-content,
