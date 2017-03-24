@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "0.12"
+install:
+  - npm install
+script:
+  - gulp build
+after_success: gulp deploy --user $FTP_USER --password $FTP_PASSWORD

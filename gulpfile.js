@@ -7,9 +7,10 @@
   var browserSync = require('browser-sync').create();
   var sourcemaps = require('gulp-sourcemaps');
   var autoprefixer = require('gulp-autoprefixer');
+  var sftp = require('gulp-sftp');
 
   gulp.task('compileStyle', function(){
-    gulp.src(['./src/*.scss', './src/**/*.scss'])
+    return gulp.src(['./src/*.scss', './src/**/*.scss'])
       //.pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(autoprefixer({
@@ -32,5 +33,22 @@
   });
 
   gulp.task('default', ['server']);
+
+  gulp.task('build', ['compileStyle']);
+
+
+  gulp.task('deploy', ['build'] ,function() {
+
+    var minimist = require('minimist');
+    var args = minimist(process.argv.slice(2));
+
+    return gulp.src(['./src/*', './src/**/*'])
+        .pipe(sftp({
+            host: 'staging.kingwoodchurch.com',
+            user: args.user,
+            password: args.password,
+            remotePath: 'staging.kingwoodchurch.com/wp-content/themes/kingwood-2017'
+        }));
+  });
 
 })();
