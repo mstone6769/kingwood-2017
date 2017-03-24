@@ -173,7 +173,7 @@ $media-query-navigation: "screen and (min-width: 950px)";
 
 }
 
-.menu-top-nav-container {
+.menu-main-menu-container {
   @media #{$media-query-navigation} {
     padding-top: 1rem;
     float: right;
@@ -219,7 +219,7 @@ $media-query-navigation: "screen and (min-width: 950px)";
   }
 }
 
-.menu-top-nav-container > ul > li > a {
+.menu-main-menu-container > ul > li > a {
   // @media(min-width: 960px) {
   //   padding-left: 1.5rem;
   //   padding-right: 1.5rem;
