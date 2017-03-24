@@ -5,20 +5,17 @@
   var minifyCSS = require('gulp-minify-css');
   var sass = require('gulp-sass');
   var browserSync = require('browser-sync').create();
-  var sourcemaps = require('gulp-sourcemaps');
   var autoprefixer = require('gulp-autoprefixer');
   var sftp = require('gulp-sftp');
 
   gulp.task('compileStyle', function(){
     return gulp.src(['./src/*.scss', './src/**/*.scss'])
-      //.pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
       }))
       .pipe(minifyCSS())
-      //.pipe(sourcemaps.write())
       .pipe(gulp.dest('./src'))
       .pipe(browserSync.stream());
   });
