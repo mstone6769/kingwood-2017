@@ -120,6 +120,114 @@ function kingwood_2017_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'kingwood_2017_scripts' );
 
+
+
+
+
+function change_sermon_labels() {
+
+	$sermon_object = get_post_type_object( 'wpfc_sermon' );
+
+	if ( ! $sermon_object )
+	    return FALSE;
+
+	// see get_post_type_labels()
+	$sermon_object->labels->name               = 'Messages';
+	$sermon_object->labels->singular_name      = 'Message';
+	$sermon_object->labels->add_new_item       = 'Add new Message';
+	$sermon_object->labels->all_items          = 'All Messages';
+	$sermon_object->labels->edit_item          = 'Edit Message';
+	$sermon_object->labels->name_admin_bar     = 'Messages';
+	$sermon_object->labels->menu_name          = 'Messages';
+	$sermon_object->labels->new_item           = 'New Message';
+	$sermon_object->labels->not_found          = 'No Messages found';
+	$sermon_object->labels->not_found_in_trash = 'No Messages found in trash';
+	$sermon_object->labels->search_items       = 'Search Messages';
+	$sermon_object->labels->view_item          = 'View Message';
+
+	return TRUE;
+}
+
+add_action( 'wp_loaded', 'change_sermon_labels', 20 );
+
+
+function change_preacher_labels() {
+
+	$preacher_object = get_taxonomy('wpfc_preacher');
+
+	if ( ! $preacher_object )
+	    return FALSE;
+
+	// see get_post_type_labels()
+	$preacher_object->labels->name               = 'Pastors';
+	$preacher_object->labels->singular_name      = 'Pastor';
+	$preacher_object->labels->add_new_item       = 'Add new Pastor';
+	$preacher_object->labels->all_items          = 'All Pastors';
+	$preacher_object->labels->edit_item          = 'Edit Pastor';
+	$preacher_object->labels->name_admin_bar     = 'Pastors';
+	$preacher_object->labels->menu_name          = 'Pastors';
+	$preacher_object->labels->new_item           = 'New Pastor';
+	$preacher_object->labels->not_found          = 'No Pastors found';
+	$preacher_object->labels->not_found_in_trash = 'No Pastors found in trash';
+	$preacher_object->labels->search_items       = 'Search Pastors';
+	$preacher_object->labels->view_item          = 'View Pastor';
+
+	//$preacher_object->rewrite['slug'] = 'about/leadership/';
+	//$preacher_object->rewrite['with_front'] = false;
+
+	// re-register the taxonomy
+	register_taxonomy( 'wpfc_preacher', 'wpfc_sermon', (array) $preacher_object );
+
+	return TRUE;
+}
+
+add_action( 'wp_loaded', 'change_preacher_labels', 20 );
+
+
+function change_sermon_series_labels() {
+	$sermon_series = get_taxonomy('wpfc_sermon_series');
+
+	if ( ! $sermon_series )
+	    return FALSE;
+
+	// see get_post_type_labels()
+	$sermon_series->labels->name               = 'Series';
+	$sermon_series->labels->singular_name      = 'Series';
+	$sermon_series->labels->add_new_item       = 'Add Series';
+	$sermon_series->labels->all_items          = 'All Series';
+	$sermon_series->labels->edit_item          = 'Edit Series';
+	$sermon_series->labels->name_admin_bar     = 'Series';
+	$sermon_series->labels->menu_name          = 'Series';
+	$sermon_series->labels->new_item           = 'New Series';
+	$sermon_series->labels->not_found          = 'No Series found';
+	$sermon_series->labels->not_found_in_trash = 'No Series found in trash';
+	$sermon_series->labels->search_items       = 'Search Series';
+	$sermon_series->labels->view_item          = 'View Series';
+
+	//$sermon_series->rewrite['slug'] = 'about/leadership/';
+	//$sermon_series->rewrite['with_front'] = false;
+
+	// re-register the taxonomy
+	register_taxonomy( 'wpfc_sermon_series', 'wpfc_sermon', (array) $sermon_series );
+
+	return TRUE;
+}
+
+add_action( 'wp_loaded', 'change_sermon_series_labels', 20 );
+
+
+function modify_archive_title( $title ) { 
+	$healthy = array("Pastor: ", "Series: ", "Service: ");
+	$yummy   = array("<small>Pastor</small>", "<small>Series</small>", "<small>Service</small>");
+
+	return str_replace($healthy, $yummy, str_replace("Archives: ", "", $title));
+}
+
+add_filter( 'get_the_archive_title', 'modify_archive_title' );
+
+
+
+
 /**
  * Implement the Custom Header feature.
  */

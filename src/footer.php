@@ -593,7 +593,9 @@
 
 <?php wp_footer(); ?>
 <style type="text/css">
-  .entry-header {
+  .page > .entry-header,
+  .site-main > .page-header,
+  .entry-header.entry-post  {
     background-image: url('<?php header_image(); ?>');
   }
 </style>

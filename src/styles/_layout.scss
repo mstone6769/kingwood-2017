@@ -356,7 +356,8 @@
   }
 }
 
-.section-subheader {
+.section-subheader, .archive-description > p {
+
   font-family: $sans-font;
   max-width: 640px;
   &.text-center {
@@ -366,6 +367,12 @@
   @media(min-width: 640px) {
     font-size: 1.5em;
   }
+}
+
+.archive-description > p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

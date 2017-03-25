@@ -334,8 +334,28 @@ $media-query-navigation: "screen and (min-width: 950px)";
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-  margin: 0 0 1.5em;
+  margin: 0;
   overflow: hidden;
+  background-color: $cream;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next,
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous  {
+  > a {
+    padding: 1rem;
+    font-family: $sans-font;
+    text-transform: uppercase;
+    display: block;
+    &:hover, &:focus {
+      color: white;
+      background-color: $primary-active;
+    }
+  }
+  
 }
 
 .comment-navigation .nav-previous,

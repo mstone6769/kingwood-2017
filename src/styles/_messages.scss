@@ -1,0 +1,133 @@
+.posts-container {
+  display: flex;
+  flex-flow: row wrap;
+  > * {
+    flex: 1 100%;
+  }
+  > .wpfc_sermon {
+    flex: 1 auto;
+    width: 100%;
+    @media (min-width: 640px) {
+      width: 50%;
+    }
+    @media (min-width: 800px) {
+      width: 33.333333333%;
+    }
+    //max-width: 640px;
+    padding: 1rem;
+    .wpfc_sermon_wrap {
+      padding: 0;
+    }
+    display: flex;
+    flex-flow: column;
+
+    .entry-header {
+      // padding-left: 1rem;
+      // padding-right: 1rem;
+      width: 100%;
+      order: 2;
+    }
+    .entry-title {
+      margin: 0;
+      padding: 0;
+      > a {
+        display: block;
+        padding: 0.5em 0;
+      }
+    }
+    .entry-content {
+      margin: 0;
+    }
+
+    .wpfc_sermon_meta {
+      display: none;
+    }
+    .wpfc_sermon-audio {
+      display: none;
+    }
+  }
+}
+
+.post-lists > .entry-header {
+  margin-bottom: 1.5rem;
+}
+
+.wpfc_sermon.hentry {
+  display: flex;
+  flex-flow: column;
+  > * {
+    flex: 1 100%;
+  }
+  // > .entry-content {
+  //   display: flex;
+  //   flex-flow: column wrap;
+  //   > * {
+  //     flex: 1 100%;
+  //   }
+  //   > .wpfc_sermon.cf {
+  //     order: 1;
+  //   }
+  // }
+
+}
+.wpfc_sermon-audio {
+  .mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
+    background-color: $primary;
+  }
+}
+
+.wpfc_sermon_image {
+  > img {
+    display: block;
+  }
+}
+
+
+.wpfc_sermon {
+  font-family: $sans-font;
+  > p {
+    text-align: center;
+  }
+}
+
+.wpfc_sermon-audio {
+  padding: 1rem 0;
+}
+.wpfc_sermon-template-default.single {
+
+}
+
+.entry-post + .entry-content .wpfc_sermon_wrap {
+  position: relative;
+  margin-top: -5rem;
+}
+
+.wpfc_sermon_wrap {
+  text-align: center;
+}
+
+.wpfc_sermon_meta {
+  padding-top: 2rem;
+  display: inline-block;
+  .service_type {
+    display: none;
+  }
+  > * {
+    margin-bottom: 2rem;
+  }
+  text-transform: uppercase;
+  @media (min-width: 640px) {
+
+    > * {
+      display: inline-block;
+      &:nth-child(1), &:nth-child(2) {
+        padding-right: 1em;
+      }
+      
+    }
+  }
+}
+
+#wpfc-attachments {
+  display: none;
+}
