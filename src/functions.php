@@ -216,6 +216,19 @@ function change_sermon_series_labels() {
 add_action( 'wp_loaded', 'change_sermon_series_labels', 20 );
 
 
+
+function change_sermon_image_sizes() {
+	set_post_thumbnail_size( 640, 360, true );
+  if ( function_exists( 'add_image_size' ) ) {
+
+		add_image_size( 'sermon_small', 640, 360, true );
+		add_image_size( 'sermon_medium', 1280, 720, true );
+		add_image_size( 'sermon_wide', 1600, 900, true );
+	}
+}
+add_action( 'admin_init', 'change_sermon_image_sizes', 11 );
+
+
 function modify_archive_title( $title ) { 
 	$healthy = array("Pastor: ", "Series: ", "Service: ");
 	$yummy   = array("<small>Pastor</small>", "<small>Series</small>", "<small>Service</small>");
