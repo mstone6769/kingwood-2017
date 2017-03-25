@@ -36,7 +36,44 @@
     padding-top: 14rem;
     padding-bottom: 8rem;
   }
+
 }
+
+.entry-menu {
+  background-color: $black;
+  > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    > li {
+      display: block;
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(white, 0.1);
+      }
+      @media #{$media-query-navigation} {
+        display: inline-block;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+      }
+    }
+    .current_page_item {
+      font-weight: 600;
+    }
+    a {
+      display: inline-block;
+      padding: 1rem;
+      font-family: $sans-font;
+      color: white;
+      &:hover, &:focus {
+        background-color: $primary-active;
+      }
+    }
+  }
+}
+
+
 
 
 .entry-title {

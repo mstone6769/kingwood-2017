@@ -11,8 +11,23 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+	<div class="entry-menu">
+
+		<?php
+		  if (is_page() && $post->post_parent && shortcode_exists( 'sibling-pages' )) {
+				echo do_shortcode( '[sibling-pages depth="1" sort_column="post_title"]' );
+			}
+		?>
+		<?php
+		  if (shortcode_exists( 'child-pages' )) {
+				echo do_shortcode( '[child-pages depth="1" sort_column="post_title"]' );
+			}
+		?>
+	</div>
 
 	<div class="entry-content">
 		<?php

@@ -219,6 +219,15 @@ $media-query-navigation: "screen and (min-width: 950px)";
   }
 }
 
+.main-navigation li {
+  &.current-page-ancestor {
+    > a {
+      border-bottom: 2px solid rgba($black, 0.2);
+      //background-color: 
+    }
+  }
+}
+
 .menu-main-menu-container > ul > li > a {
   // @media(min-width: 960px) {
   //   padding-left: 1.5rem;
@@ -335,3 +344,4 @@ $media-query-navigation: "screen and (min-width: 950px)";
   text-align: right;
   width: 50%;
 }
+
