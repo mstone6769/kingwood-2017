@@ -26,11 +26,18 @@
 
 .entry-header {
   background-color: $primary;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover !important;
   color: white;
   padding-top: 10rem;
   padding-bottom: 4rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  overflow: hidden;
+  img {
+    width: 100%
+  }
   //box-shadow: 0 -5px 100px rgba(black, 0.1) inset;
   @media (min-width: 1200px) {
     padding-top: 14rem;
@@ -62,6 +69,8 @@
       font-weight: 600;
     }
     a {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
       display: inline-block;
       padding: 1rem;
       font-family: $sans-font;

@@ -592,6 +592,11 @@
 </svg> -->
 
 <?php wp_footer(); ?>
+<style type="text/css">
+  .entry-header {
+    background-image: url('<?php header_image(); ?>');
+  }
+</style>
 <script type="text/javascript">
   var myElement = document.querySelector("#masthead");
   // construct an instance of Headroom, passing the element

@@ -220,19 +220,27 @@ $media-query-navigation: "screen and (min-width: 950px)";
 }
 
 .main-navigation li {
-  &.current-page-ancestor {
-    > a {
-      border-bottom: 2px solid rgba($black, 0.2);
-      //background-color: 
+  &.current-page-ancestor, &.current_page_item {
+    position: relative;
+    &::after {
+      @media #{$media-query-navigation} {
+        content: '';
+      }
+      height: 0.25em;
+      background-color: rgba(black, 0.2);
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      @media(min-width: 1080px) {
+        left: 1.25rem;
+        right: 1.25rem;
+      }
+      bottom: 0;
     }
   }
 }
 
 .menu-main-menu-container > ul > li > a {
-  // @media(min-width: 960px) {
-  //   padding-left: 1.5rem;
-  //   padding-right: 1.5rem;
-  // }
   @media(min-width: 1080px) {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
