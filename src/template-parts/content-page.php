@@ -11,8 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		
-		<?php //the_header_image_tag(); ?>
+		<div class="pic-shade"></div>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<p class="text-center section-subheader"><?php the_subtitle(); ?></p>
 	</header><!-- .entry-header -->

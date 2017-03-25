@@ -36,9 +36,19 @@
   padding-left: 1rem;
   padding-right: 1rem;
   overflow: hidden;
-  img {
-    width: 100%
+  position: relative;
+  > .pic-shade {
+    opacity: 0;
   }
+  > *:not(.pic-shade) {
+    position: relative;
+    z-index: 222;
+  }
+
+  .section-subheader {
+    max-width: 800px;
+  }
+
   //box-shadow: 0 -5px 100px rgba(black, 0.1) inset;
   @media (min-width: 1200px) {
     padding-top: 14rem;
