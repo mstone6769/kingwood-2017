@@ -18,13 +18,14 @@
 	<div class="entry-menu">
 
 		<?php
-		  if (is_page() && $post->post_parent && shortcode_exists( 'sibling-pages' )) {
-				echo do_shortcode( '[sibling-pages depth="1" sort_column="post_title"]' );
+
+
+		  if (is_page() && $post->post_parent == 7 && shortcode_exists( 'sibling-pages' )) {
+				echo do_shortcode( '[sibling-pages depth="1" sort_column="menu_order"]' );
 			}
-		?>
-		<?php
-		  if (shortcode_exists( 'child-pages' )) {
-				echo do_shortcode( '[child-pages depth="1" sort_column="post_title"]' );
+
+		  if (is_page('about') && shortcode_exists( 'child-pages' )) {
+				echo do_shortcode( '[child-pages depth="1" sort_column="menu_order"]' );
 			}
 		?>
 	</div>
