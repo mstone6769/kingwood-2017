@@ -1,6 +1,8 @@
 .posts-container {
   display: flex;
   flex-flow: row wrap;
+  padding-left: 0;
+  padding-right: 0;
   > * {
     flex: 1 100%;
   }
@@ -8,10 +10,10 @@
     flex: 1 auto;
     width: 100%;
     @media (min-width: 640px) {
-      width: 50%;
+      max-width: 50%;
     }
     @media (min-width: 800px) {
-      width: 33.333333333%;
+      max-width: 33.333333333%;
     }
     //max-width: 640px;
     padding: 1rem;
