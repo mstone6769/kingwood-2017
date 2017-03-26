@@ -6,6 +6,18 @@
   > * {
     flex: 1 100%;
   }
+  .wpfc_sermon_image {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: $cream;
+    position: relative;
+    > a {
+      display: block;
+      position: absolute;
+      left: 0;
+      top:0;
+    }
+  }
   > .wpfc_sermon {
     flex: 1 auto;
     width: 100%;
@@ -72,6 +84,9 @@
   // }
 
 }
+
+
+
 .wpfc_sermon-audio {
   .mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
     background-color: $primary;
