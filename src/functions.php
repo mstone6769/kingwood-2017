@@ -239,6 +239,15 @@ function modify_archive_title( $title ) {
 add_filter( 'get_the_archive_title', 'modify_archive_title' );
 
 
+function wpb_autolink_featured_images( $html, $post_id, $post_image_id ) {
+	if (! is_singular()) {
+		return '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
+	}
+	return $html;
+}
+
+add_filter( 'post_thumbnail_html', 'wpb_autolink_featured_images', 10, 3 );
+
 
 
 /**
