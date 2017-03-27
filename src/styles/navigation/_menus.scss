@@ -220,7 +220,10 @@ $media-query-navigation: "screen and (min-width: 950px)";
 }
 
 .main-navigation li {
-  &.current-page-ancestor, &.current_page_item {
+  &.current-page-ancestor,
+  &.current_page_item,
+  &.current-menu-item,
+  &.current-menu-ancestor {
     position: relative;
     &::after {
       @media #{$media-query-navigation} {

@@ -1,0 +1,51 @@
+// event search
+
+
+#em-wrapper > p {
+  margin-bottom: 0;
+}
+
+.em-events-search-form.em-search-form {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(black, 0.2);
+}
+
+.em-events-search-text.em-search-text {
+  width: 100%;
+  padding: 0.5em 1em;
+  display: block;
+}
+
+
+// event list
+
+.event-list {
+  > .event-list-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(black, 0.2);
+    } 
+  }
+}
+
+.event-list-item {
+  @extend %clear;
+  position: relative;
+  padding: 1rem 0;
+  @media (min-width: 640px) {
+    > .event-image {
+      float: left;
+      width: 50%;
+    }
+    > .event-item {
+      float: right;
+      min-width: 50%;
+      padding-left: 2rem;
+    }
+  }
+}
+
+.event-image {
+  > a {
+    display: block;
+  }
+}
