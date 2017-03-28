@@ -117,6 +117,82 @@ h1.entry-title, .page-title {
   }
 }
 
+%centered {
+
+}
+#post-599 {
+  margin-bottom: 0;
+  .services {
+    color: white;
+    > .wide-section-content  {
+      background: none;
+    }
+    
+    .service-times, .service-location {
+      font-family: $sans-font;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+    .service-times {
+      margin-bottom: 0;
+    }
+    .service-location {
+      margin-bottom: 1rem;
+    }
+
+  }
+  @media (max-width: 799px) {
+    .services {
+      background-color: $black;
+    }
+    .services::before {
+      background-position: center top;
+      background-image: url('images/what-to-expect/service.jpg');
+    }
+    .parking::before {
+      background-image: url('images/what-to-expect/parking.jpg');
+    }
+    .children::before {
+      background-image: url('images/what-to-expect/children.jpg');
+    }
+    .youth::before {
+      background-image: url('images/what-to-expect/youth.jpg');
+    }
+    .small-groups::before {
+      background-image: url('images/what-to-expect/small-groups.jpg');
+    }
+  }
+
+  @media (min-width: 800px) {
+    .services {
+      background-position: center top;
+      background-image: url('images/what-to-expect/service.jpg');
+      > .wide-section-content {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .parking {
+      background-image: url('images/what-to-expect/parking.jpg');
+    }
+    .children {
+      background-image: url('images/what-to-expect/children.jpg');
+    }
+    .youth {
+      background-image: url('images/what-to-expect/youth.jpg');
+    }
+    .small-groups {
+      background-image: url('images/what-to-expect/small-groups.jpg');
+    }
+  }
+  
+  .entry-content {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+ 
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -127,14 +203,35 @@ h1.entry-title, .page-title {
   }
   
 
-  > {
+  >, > .wide-section > {
     p, h1, h2, h3, h4, h5, h6, div {
       max-width: 800px;
       padding-left: 1rem;
       padding-right: 1rem;
-      font-size: 1.25em;
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+
+  > {
+    p, h1, h2, h3, h4, h5, h6, div {
+      font-size: 1.25em;
+    }
+  }
+
+  > .wide-section {
+    max-width: 100%;
+    > .wide-section-content {
+      max-width: 640px;
+      font-size: 1.25rem;
+      @media(min-width: 800px) {
+        font-size: 1.5rem;
+      }
+      @media(min-width: 1200px) {
+        max-width: 800px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
     }
   }
   
@@ -143,6 +240,88 @@ h1.entry-title, .page-title {
     margin-left: auto;
     margin-right: auto;
     max-width: 1160px;
+  }
+}
+
+.wide-section {
+  
+  @media(max-width: 799px) {
+    position: relative;
+    padding-top: 56.25%;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      padding-bottom: 56.25%;
+      width: 100%;
+      background-color: $black;
+      background-size: cover !important;
+      background-position: center center;
+    }
+    
+    
+  }
+
+  @media(min-width: 800px) {
+    background-color: $black;
+    background-size: cover !important;
+    background-position: center center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: 90vh;
+    position: relative;
+    box-shadow: inset 0 1px 80px rgba(black, 0.3);
+  }
+
+  
+  
+  .button {
+    font-size: 1rem;
+  }
+
+  > .wide-section-content {
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: $white;
+    h2 {
+      margin-bottom: 0.5rem;
+      //color: white;
+      a {
+        //color: white;
+      }
+    }
+    width: 100%;
+    max-width: 640px;
+    @media(min-width: 800px) {
+      padding: 1rem 0 0 0;
+      margin-left: 0;
+      margin-right: 0;
+      left: 0;
+      position: absolute;
+      bottom: 2rem;
+      background-color: rgba(white, 0.9);
+      //transform: translateY(-50%);
+      
+    }
+  }
+
+  &.wide-section-left {
+    > .wide-section-content {
+      margin-left: 0;
+    }
+  }
+  &.wide-section-right {
+    > .wide-section-content {
+      @media(min-width: 800px) {
+        margin-left: 0;
+        margin-right: 0;
+        right: 0;
+        left: auto;
+      }
+    }
   }
 }
 
