@@ -37,6 +37,8 @@ a:active {
   font-family: $sans-font;
   font-weight: 600;
   letter-spacing: .2em;
+  font-size: 1em;
+  text-transform: uppercase;
   transition: background-color 200ms linear;
   &:hover, &:focus {
     color: white;

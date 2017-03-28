@@ -7,7 +7,6 @@
 
 .em-events-search-form.em-search-form {
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(black, 0.2);
 }
 
 .em-events-search-text.em-search-text {
@@ -17,35 +16,109 @@
 }
 
 
-// event list
-
-.event-list {
-  > .event-list-item {
-    &:not(:last-child) {
-      border-bottom: 1px solid rgba(black, 0.2);
-    } 
-  }
-}
-
 .event-list-item {
   @extend %clear;
   position: relative;
-  padding: 1rem 0;
+  padding: 1rem 0 0;
+  > .event-item {
+    text-align: left;
+  }
   @media (min-width: 640px) {
-    > .event-image {
+    > .event-image-container {
       float: left;
-      width: 50%;
+      width: 40%;
     }
     > .event-item {
       float: right;
-      min-width: 50%;
+      width: 60%;
       padding-left: 2rem;
     }
   }
 }
 
-.event-image {
-  > a {
-    display: block;
+.em-location-map-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-item {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.event-item-date {
+  margin-bottom: 0;
+}
+
+a.event-list-item {
+  display: block;
+  color: $black;
+  .event-item-name {
+    color: $primary;
+    margin-bottom: 0.5rem;
   }
+  &:hover, &:focus {
+    .event-item-name {
+      color: $primary-active;
+    }
+    .event-image {
+      background-color: $primary-active;
+    }
+  }
+}
+
+.event-image {
+  background-color: $cream;
+  position: relative;
+  padding-bottom: 56.25%;
+  margin-bottom: 1rem;
+  transition: background-color 200ms linear;
+  overflow: hidden;
+  > * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  > a {
+    position: relative;
+    
+    display: block;
+    > img, &::before {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    &::before {
+      content: "";
+      height: 100%;
+      
+    }
+  }
+}
+
+.event-date {
+  width: 4em;
+  background-color: white;
+  font-family: $sans-font;
+  color: $black;
+  text-transform: uppercase;
+  > .event-month {
+    background-color: $black;
+    color: white;
+    text-align: center;
+  }
+  > .event-day {
+    padding: 0.25rem 1rem;
+    text-align: center;
+    font-size: 2em;
+  }
+}
+
+.event-image-background {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
