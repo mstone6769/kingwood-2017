@@ -22,10 +22,23 @@ get_header(); ?>
 
 		<div class="pic-shade"></div>
 		<div class="hero-content">
-			<h1 class="headline">Welcome Home</h1>
-			<p class="text">Sundays &bull; 9:00am &bull; 10:30am</p>
-			<p class="text">100 Harvest Way, Alabaster, AL</p>
-			<p><a class="button" href="#main">Service Information</a></p>
+			<h1 class="headline"><?php
+
+					if(get_field('hero_headline'))
+					{
+						echo get_field('hero_headline');
+					}
+
+			?></h1>
+			
+			<?php
+
+					if(get_field('hero_text'))
+					{
+						echo get_field('hero_text');
+					}
+
+			?>
 
 		</div>
 		<a href="#main" class="arrow bounce"><?php esc_html_e( 'Service Information', 'kingwood-2017' ); ?></a>
@@ -45,12 +58,12 @@ get_header(); ?>
 						</div>
 
 						<div class="column">
-							<h2 class="section-header">Service Information</h2>
+							<h2 class="section-header"><a href="/what-to-expect">What to Expect</a></h2>
 							<p class="section-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales, ligula in tincidunt gravida, libero odio finibus eros, nec congue nisi sem non massa.</p>
 							
 							<hr>
 							<h3>Service Times</h3>
-							<p>Sundays &bull; 9:00am &bull; 10:30am <a class="cta-link">What to Expect</a></p>
+							<p>Sundays &bull; 9:00am &bull; 10:30am</p>
 							<h3>Location</h3>
 							<p>100 Harvest Way Alabaster, AL 35007</p>
 						</div>

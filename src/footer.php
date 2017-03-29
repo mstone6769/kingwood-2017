@@ -592,13 +592,37 @@
 </svg> -->
 
 <?php wp_footer(); ?>
-<style type="text/css">
-  .page > .entry-header,
-  .site-main > .page-header,
-  .entry-header.entry-post  {
-    background-image: url('<?php header_image(); ?>');
-  }
-</style>
+<?php
+
+    if(get_field('header_image'))
+    {
+      $image = get_field('header_image') ?>
+
+    <style type="text/css">
+
+      @media(max-width: 799px) {
+        .page > .entry-header,
+        .site-main > .page-header,
+        .entry-header.entry-post  {
+          background-image: url('<?php echo $image['sizes']['medium']; ?>');
+        }
+      }
+      @media(min-width: 800px) {
+        .page > .entry-header,
+        .site-main > .page-header,
+        .entry-header.entry-post  {
+          background-image: url('<?php echo $image['sizes']['large']; ?>');
+        }
+      }
+    </style>
+
+
+<?php
+
+    }
+
+?>
+
 <script type="text/javascript">
   var myElement = document.querySelector("#masthead");
   // construct an instance of Headroom, passing the element

@@ -13,7 +13,14 @@
 	<header class="entry-header entry-post">
 		<div class="pic-shade"></div>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<p class="text-center section-subheader"><?php the_subtitle(); ?></p>
+		<?php
+
+			if(get_field('subtitle'))
+			{
+				echo '<p class="text-center section-subheader">' . get_field('subtitle') . '</p>';
+			}
+
+			?>
 	</header><!-- .entry-header -->
 	<div class="entry-menu">
 

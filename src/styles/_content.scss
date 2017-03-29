@@ -31,9 +31,11 @@
 .entry-header.entry-post {
   background-color: $primary;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   background-size: cover !important;
-  background-attachment: fixed;
+  @media(min-width: 1200px) {
+    background-attachment: fixed;
+  }
   color: white;
   padding-top: 10rem;
   padding-bottom: 4rem;
