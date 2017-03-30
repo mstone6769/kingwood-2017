@@ -49,21 +49,41 @@ if (is_front_page()) { ?>
 					<div class="grid grid-2">
 
 						<div class="column">
-							<a href="" class="card shade">
-								<img src="/wp-content/themes/kingwood-2017/images/i-am.jpg">
-								<h2><span>Latest Message:</span> I AM the Gate</h2>
+							<?php
+
+								// if (shortcode_exists( 'sermons' )) {
+							 //  	echo do_shortcode( '[sermons posts_per_page="1" paging="no"]hello[/sermons]' );
+							 //  }
+
+							$args = array(
+								'posts_per_page'   => 1,
+								'offset'           => 0,
+								'category'         => '',
+								'category_name'    => '',
+								'orderby'          => 'sermon_date',
+								'order'            => 'ASC',
+								'include'          => '',
+								'exclude'          => '',
+								'meta_key'         => '',
+								'meta_value'       => '',
+								'post_type'        => 'wpfc_sermon',
+								'post_mime_type'   => '',
+								'post_parent'      => '',
+								'author'	   => '',
+								'author_name'	   => '',
+								'post_status'      => 'publish',
+								'suppress_filters' => false 
+							);
+							$latest_cpt = get_posts($args);
+
+							 ?>
+							<a href="<?=esc_url( get_permalink($latest_cpt[0]->ID) ); ?>" rel="bookmark" class="card shade">
+								<?=get_the_post_thumbnail($latest_cpt[0]->ID, 'sermon_small'); ?>
+								<h2><span>Latest Message:</span> <?=get_the_title($latest_cpt[0]->ID); ?></h2>
 							</a>
 						</div>
 
 						<div class="column">
-							<h2 class="section-header"><?php
-
-					if(get_field('service_info_headline'))
-					{
-						echo get_field('service_info_headline');
-					}
-
-			?></h2>
 						<?php
 
 					if(get_field('service_info_text'))
@@ -77,13 +97,39 @@ if (is_front_page()) { ?>
 						
 						
 					</div>
-					<ul class="grid grid-4">
-						<li>
-						  <a href="" class="card card-with-image">
-						  	<img src="/wp-content/themes/kingwood-2017/images/what-we-believe.jpg">
-						  	<h3>What We Believe</h3>
-						  </a>
-						</li>
+
+					<?php
+
+						// check if the repeater field has rows of data
+						if( have_rows('ctas') ):
+
+							echo '<ul class="grid grid-4">';
+
+						 	// loop through the rows of data
+						    while ( have_rows('ctas') ) : the_row(); ?>
+
+						   <li>
+								  <a href="<?=the_sub_field('link'); ?>" class="card card-with-image">
+								  	<img src="<?=the_sub_field('image'); ?>">
+								  	<h3><?=the_sub_field('label'); ?></h3>
+								  </a>
+								</li>
+
+
+						 <?php   endwhile;
+
+						 echo '</ul>';
+
+						else :
+
+						    // no rows found
+
+
+						endif;
+
+?>
+					
+						<!-- 
 						<li>
 						  <a href="" class="card card-with-image">
 						  	<img src="/wp-content/themes/kingwood-2017/images/kids.jpg">
@@ -102,7 +148,7 @@ if (is_front_page()) { ?>
 						  	<h3>Directions</h3>
 						  </a>
 						</li>
-					</ul>
+					</ul> -->
 				</div>
 			</section>
 			<section class="wrapper shade">
@@ -111,40 +157,37 @@ if (is_front_page()) { ?>
 					<div class="grid grid-2">
 						
 						<div>
-							<h2 class="section-header"><a href="">Upcoming Events</a></h2>
+							<h2 class="section-header"><a href="/events/">Upcoming Events</a></h2>
 							<ul class="grid grid-2 grid-tight">
-								<li>
-								  <a href="" class="card">
-								  	<h3>Event 1</h3>
-								  	<p>Mon, Jan 1, 2017 4:00pm<br>Sanctuary</p>
-								  </a>
-								</li>
-								<li>
-								  <a href="" class="card">
-								  	<h3>Event 2</h3>
-								  	<p>Mon, Jan 1, 2017 4:00pm<br>Sanctuary</p>
-								  </a>
-								</li>
-								<li>
-								  <a href="" class="card">
-								  	<h3>Event 3</h3>
-								  	<p>Mon, Jan 1, 2017 4:00pm<br>Sanctuary</p>
-								  </a>
-								</li>
-								<li>
-								  <a href="" class="card">
-								  	<h3>Event 4</h3>
-								  	<p>Mon, Jan 1, 2017 4:00pm<br>Sanctuary</p>
-								  </a>
-								</li>
+								
+							<?php
+
+
+							  if (shortcode_exists( 'events_list' )) {
+							  	echo do_shortcode( '[events_list limit="4"]<li><a href="#_EVENTURL" class="card"><h3>#_EVENTNAME</h3><p>#_EVENTDATES<br>#_EVENTTIMES</p></li>[/events_list]' );
+							  }
+							?>
+
 							</ul>
-							<a href="" class="cta-link">See all</a>
+							<a href="/events/" class="cta-link">See all</a>
 						</div>
 						<div>
-							<a href="" class="card shade">
-								<img src="/wp-content/themes/kingwood-2017/images/easter.jpg">
-								<h2>Sunday, April 16</h2>
-							</a>
+							<?php if(get_field('featured_upcoming_event')) : ?>
+
+								<?php
+
+
+
+								   $post_object = get_field('featured_upcoming_event');
+								   $post = $post_object;
+								   setup_postdata( $post );  ?>
+
+								<a href="<?=esc_url( get_permalink() ); ?>" rel="bookmark" class="card shade">
+									<?=get_the_post_thumbnail($post_object->ID, 'sermon_small'); ?>
+									<h2><?=get_field('event_dates'); ?></h2>
+								</a>
+								<?php  wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</div>
 					</div>
 					
