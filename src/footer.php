@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
     <div class="container clear">
       <div class="site-footer-logo">
-        <p class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></p>
+        <p class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/kingwood-logo.svg" alt="Kingwood Church"></a></p>
         
       </div>
       
@@ -26,39 +26,24 @@
 
             <li 
               class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-36">
-              <a href="/">About</a>
+              <a href="/about/">About</a>
 
-              <ul class="sub-menu">
+              <?php
 
-                <li 
-                  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
-                  <a href="/">Our Story</a>
-                </li>
-
-                <li 
-                  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
-                  <a href="/">Core Values</a>
-                </li>
-
-                <li 
-                  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
-                  <a href="/">Leadership</a>
-                </li>
-                <li><a href="">Children</a></li>
-                <li><a href="">Youth</a></li>
-                <li><a href="">Adults</a></li>
-
-              </ul>
+                if (shortcode_exists( 'child-pages' )) {
+                  echo do_shortcode( '[child-pages depth="1" sort_column="menu_order" child_of="7"]' );
+                }
+              ?>
 
             </li>
             <li>
-              <a href="/">Contact Us</a>
+              <a href="/contact/">Contact Us</a>
               <p>100 Harvest Way<br>Alabaster, AL 35007</p>
               <p>Phone: (205) 633-3933</p>
             </li>
-            <li><a href="">Child Development Center</a></li>
-            <li><a href="">Kingwood Christian School</a></li>
-            <li><a href="">Master's Commission</a></li>
+            <li><a href="http://kccdc.com/">Child Development Center</a></li>
+            <li><a href="http://kingwoodchristianschool.com/">Kingwood Christian School</a></li>
+            <li><a href="http://bmmc.net/">Master's Commission</a></li>
 
           </ul>
         </div>

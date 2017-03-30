@@ -40,10 +40,10 @@
         <div class="site-branding">
 
           <?php
-          if ( is_front_page() && is_home() ) : ?>
-            <h1 class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></h1>
+          if ( is_front_page() ) : ?>
+            <h1 class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/kingwood-logo.svg" alt="Kingwood Church"></a></h1>
           <?php else : ?>
-            <p class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg class="logo"><use xlink:href="#kingwood-logo-horizontal" /></svg></a></p>
+            <p class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/kingwood-logo.svg" alt="Kingwood Church"></a></p>
           <?php
           endif;
           ?>

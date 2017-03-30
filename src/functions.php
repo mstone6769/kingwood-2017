@@ -224,6 +224,7 @@ function change_sermon_image_sizes() {
 		add_image_size( 'sermon_small', 640, 360, true );
 		add_image_size( 'sermon_medium', 1280, 720, true );
 		add_image_size( 'sermon_wide', 1600, 900, true );
+
 	}
 }
 add_action( 'admin_init', 'change_sermon_image_sizes', 11 );
@@ -247,7 +248,6 @@ function wpb_autolink_featured_images( $html, $post_id, $post_image_id ) {
 }
 
 add_filter( 'post_thumbnail_html', 'wpb_autolink_featured_images', 10, 3 );
-
 
 
 /**
