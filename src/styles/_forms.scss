@@ -2,6 +2,30 @@
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+
+.form-iframe {
+  width: 100%;
+  min-height: 1600px;
+  border: none;
+}
+
+.hide-for-mobile {
+  @media(max-width: 719px) {
+    display: none !important;
+  }
+}
+
+.show-for-mobile-only {
+  @media(min-width: 720px) {
+    display: none !important;
+  }
+}
+
+.page-form-button {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
 button,
 input[type="button"],
 input[type="reset"],

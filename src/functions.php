@@ -250,6 +250,47 @@ function wpb_autolink_featured_images( $html, $post_id, $post_image_id ) {
 add_filter( 'post_thumbnail_html', 'wpb_autolink_featured_images', 10, 3 );
 
 
+function form_link($atts, $content = null) {
+    extract(shortcode_atts(array(
+        "to" => ''
+    ), $atts));
+    return  '<div class="page-form-button">'.
+    				'<button '.
+						'  class="button hide-for-mobile"'.
+						'  type="button"'.
+						'  onclick="togglePageForm()">'.
+						   $content.
+						'</button>'.
+						'<a href="'.$to.'" target="_blank" class="button show-for-mobile-only">'.
+						  $content.
+						'</a></div>'.
+						'<iframe'.
+						'  id="page_form"'.
+						'  class="form-iframe"'.
+						'  src="'.$to.'">'.
+						'</iframe>'.
+						'<script>'.
+						'	var pageFormState = true;'.
+						'	togglePageForm();'.
+						'	function togglePageForm() {'.
+						'		var pageForm = document.getElementById(\'page_form\');'.
+						'		pageFormState = !pageFormState;'.
+						'		pageForm.style.display = (pageFormState) ? \'\' : \'none\';'.
+						'		if (pageFormState) {'.
+						'			pageForm.scrollIntoView({ '.
+						'			  behavior: \'smooth\' '.
+						'			});'.
+						'		}'.
+						'	}'.
+						'</script>';
+}
+
+
+
+
+add_shortcode("form-link", "form_link");
+
+
 /**
  * Implement the Custom Header feature.
  */
