@@ -101,7 +101,10 @@
 }
 
 .grid-3 > * {
-  @media(min-width: 768px) {
+  @media(min-width: 640px) {
+    width: 50%;
+  }
+  @media(min-width: 1200px) {
     width: 33.333333333333333333%;
   }
 }
@@ -188,6 +191,13 @@
   p {
     font-family: $sans-font;
   }
+  .subheading {
+    margin-bottom: 1em;
+  }
+  .icon {
+    color: $primary;
+    transition: color 200ms linear;
+  }
   > *:not(img) {
     min-width: 100%;
     margin: 0;
@@ -211,6 +221,9 @@
     background-color: black;
     h1, h2, h3, h4, h5, p {
       color: white;
+    }
+    .icon {
+      color: $primary-active;
     }
     > img {
       transform: translate(-50%, -50%) scale(1.1);
@@ -252,34 +265,6 @@
   // height: 100%;
 }
 
-.cta-link {
-  font-weight: 700;
-  font-family: $sans-font;
-}
-
-
-
-.cta-wrapper  .card {
-  h1, h2, h3, h4, h5, h6, p {
-    color: white;
-  }
-  will-change: background-color;
-  background-color: rgba(black, 0);
-  transition: background-color 250ms linear;
-  .icon {
-    height: 3em;
-    width: 3em;
-    color: white;
-    transition: transform 250ms ease;
-    will-change: transform;
-  }
-  &:hover, &:focus {
-    background-color: rgba(black, 0.2);
-    .icon {
-      transform: scale(1.25);
-    }
-  }
-}
 
 
 
@@ -287,6 +272,7 @@
 .cta-wrapper {
   background-color: $primary;
   color: white;
+  padding-bottom: 0;
 }
 
 .site-footer {

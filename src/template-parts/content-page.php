@@ -49,38 +49,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php 
-
-			$posts = get_field('subpages');
-
-			if( $posts ): ?>
-					<div class="">
-			    <ul class="grid grid-3 collapse">
-			    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-			    		<li>
-			        <?php setup_postdata($post); ?>
-
-			        	<a href="<?php the_permalink(); ?>"  class="card card-with-image">
-			            <?php the_post_thumbnail(); ?>
-			            <div>
-			            	<?php the_title( '<h2>', '</h2>' ); ?>
-			            	<?php
-
-												if(get_field('subtitle'))
-												{
-													echo '<p>' . get_field('subtitle') . '</p>';
-												}
-
-										?>
-									</div>
-			        	</a>
-			        </li>
-			    <?php endforeach; ?>
-			    </ul>
-			    </div>
-			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-			<?php endif; ?>
-
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
@@ -97,3 +65,4 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-## -->
+

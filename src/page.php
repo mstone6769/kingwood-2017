@@ -194,68 +194,10 @@ if (is_front_page()) { ?>
 				</div>
 			</section>
 			<section class="wrapper cta-wrapper">
-				<div class="container">
-					<h2 class="text-center section-header">Next Steps</h2>
-					<p class="text-center section-subheader">If you take the next step that God gives you, you will end up where you are supposed to go</p>
-					<div class="grid grid-4 collapse">
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-							<svg class="icon"><use xlink:href="#icon-first-step" /></svg>
-							<h3>First Step</h3>
-							<p>One-session introductory class</p>
-						</a>
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-						  <svg class="icon"><use xlink:href="#icon-baptism" /></svg>
-							<h3>Baptism</h3>
-							<p>Publicly declare yourself for Jesus</p>
-						</a>
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-							<svg class="icon"><use xlink:href="#icon-life-streams" /></svg>
-							<h3>Life Streams</h3>
-							<p>Grow your spiritual life in interactive seminars</p>
-						</a>
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-							<svg class="icon"><use xlink:href="#icon-life-groups" /></svg>
-							<h3>Life Groups</h3>
-							<p>Meet new people. Experience life with a small group</p>
-						</a>
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-							<svg class="icon"><use xlink:href="#icon-30-serve" /></svg>
-							<h3>30 Serve</h3>
-							<p>Try out a ministry for 30 days</p>
-						</a>
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-							<svg class="icon"><use xlink:href="#icon-missions" /></svg>
-							<h3>Support Missions</h3>
-							<p>Help spread Jesus’ message to all the world</p>
-						</a>
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-							<svg class="icon"><use xlink:href="#icon-give" /></svg>
-							<h3>Become a Giver</h3>
-							<p>Take steps to become a tither</p>
-						</a>
-						<a
-						  href=""
-						  class="card card-centered card-icon">
-							<svg class="icon"><use xlink:href="#icon-help" /></svg>
-							<h3>Need Help?</h3>
-							<p>Whatever you are going through, we would like to help you</p>
-						</a>
-					</div>
-				</div>
+				<h2 class="text-center section-header">Next Steps</h2>
+				<p class="text-center section-subheader">If you take the next step that God gives you, you will end up where you are supposed to go</p>
+
+				<?php get_template_part( 'template-parts/content', 'next-steps' ); ?>
 			</section>
 			
 			
@@ -274,124 +216,6 @@ if (is_front_page()) { ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<script type="text/javascript">
-		'use-strict';
-
-
-
-		var makeSlideshow = function( slideshowContainer, interval ) {
-		  
-		  var elements = {
-		    container: slideshowContainer,
-		    slides: slideshowContainer.getElementsByTagName('li')
-		  };
-		  
-		  elements.slidesLength = elements.slides.length;
-		    
-		  var indexes = {
-		    current: 0
-		  };
-
-		  for (i = 0; i < elements.slides.length; i++) {
-		  	var image = elements.slides[i].querySelector('img');
-		  	var imageSource = image.getAttribute('src');
-		  	image.style.display = 'none';
-		  	elements.slides[i].style['backgroundImage'] = 'url(\'' + imageSource + '\')';
-
-		  }
-
-		  var getClass = function ( element ) {
-		    return element.getAttribute && element.getAttribute( 'class' ) || '';
-		  };
-
-		  var addClass = function ( element, cssClass ) {
-		    var currentValue, newValue, finalValue;
-
-		    currentValue = getClass(element);
-		    newValue = currentValue + ' ' + cssClass + ' ';
-
-		    finalValue = newValue.replace(/  +/g, ' ').trim();
-
-		    element.setAttribute( 'class', finalValue );
-
-		    return element;
-		  };
-
-		  var removeClass = function ( element, cssClass ) {
-		    var currentValue, newValue, finalValue;
-
-		    currentValue = getClass(element);
-		    newValue = (' ' + currentValue + ' ').replace( cssClass, ' ' ).replace(/  +/g, ' ');
-
-		    finalValue = newValue.trim();
-
-		    element.setAttribute( 'class', finalValue );
-
-		    return element;
-		  };
-		  
-		  if (elements.slidesLength > 1 ) {
-		    indexes.next = 1;
-		    indexes.previous = elements.slidesLength-1;
-		    indexes.old = {
-		      previous: 0,
-		      next: 0,
-		      current: (elements.slidesLength - 1)
-		    };
-		    if (elements.slidesLength === 2) {
-		      addClass(elements.slides[0], 'slide-toggle slide-previous');
-		      addClass(elements.slides[1], 'slide-toggle');
-		    } else {
-		      addClass(elements.slides[0], 'slide-current');
-		      addClass(elements.slides[1], 'slide-next');
-		    }
-
-		    
-		    setInterval(function(){
-
-		      if (elements.slidesLength === 2) {
-		       if (indexes.current === 1) {
-		        addClass(elements.slides[1], 'slide-toggle-on');
-		       } else {
-		        removeClass(elements.slides[1], 'slide-toggle-on');
-		       }
-		       
-		       indexes.current = (indexes.current === 0) ? 1 : 0;
-		      } else {
-
-		        indexes.old = {
-		          previous: indexes.previous,
-		          current: indexes.current,
-		          next: indexes.next
-		        };
-		        indexes.previous = indexes.current;
-		        indexes.current = indexes.next;
-		        indexes.next = (indexes.current === (elements.slidesLength - 1)) ? 0 : (indexes.current + 1);
-
-		        addClass(elements.slides[indexes.previous], 'slide-previous');
-		        addClass(elements.slides[indexes.current], 'slide-current');
-		        addClass(elements.slides[indexes.next], 'slide-next');
-
-		        removeClass(elements.slides[indexes.old.previous], 'slide-previous');
-		        removeClass(elements.slides[indexes.old.current], 'slide-current');
-		        removeClass(elements.slides[indexes.old.next], 'slide-next');
-		      }
-		     
-		    }, interval);
-		  }
-		  
-		};
-		var startSlideshows = function() {
-		  var slideshows = document.querySelectorAll('.slideshow');
-
-		  for (i = 0; i < slideshows.length; i++) {
-		    var interval = slideshows[i].getAttribute('data-slideshow-interval');
-		    makeSlideshow(slideshows[i], (interval) ? interval : 2000);
-		  }
-		};
-		startSlideshows();
-	</script>
 
 
 <?php 
@@ -417,6 +241,10 @@ if (is_front_page()) { ?>
 
 			endwhile; // End of the loop.
 			?>
+
+			<?php if (get_field('show_next_steps_menu')): ?>
+				<?php get_template_part( 'template-parts/content', 'next-steps' ); ?>
+			<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
