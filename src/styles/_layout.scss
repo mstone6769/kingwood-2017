@@ -12,10 +12,28 @@
 }
 
 
+
+
 // next steps
-.post-1681, .page-id-1681 .site {
+.site.full-background, .full-background .content-area {
   background-color: $primary;
 }
+
+.full-background .entry-header.entry-post {
+  padding-bottom: 3rem;
+}
+
+.full-background .section-subheader {
+  //margin-bottom: 0;
+}
+
+.full-background {
+  .hentry {
+    margin-bottom: 0;
+  }
+}
+
+
 
 
 .site-content {
@@ -79,6 +97,12 @@
 .grid-2 > * {
   @media(min-width: 640px) {
     width: 50%;
+  }
+}
+
+.grid-3 > * {
+  @media(min-width: 768px) {
+    width: 33.333333333333333333%;
   }
 }
 
@@ -154,27 +178,18 @@
   background-color: $black;
   transition: background-color 200ms linear;
   padding-bottom: 56.25%;
-  > img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    opacity: 0.6;
-    transition: transform 200ms ease, opacity 200ms linear;
-  }
-  &:hover, &:focus {
-    background-color: black;
-    h1, h2, h3, h4, h5, h6  {
-      color: white;
-    }
-    > img {
-      transform: translate(-50%, -50%) scale(1.1);
-      opacity: 0.5;
-    }
-  }
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, p {
     color: white;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 1.25em;
+  }
+  p {
+    font-family: $sans-font;
+  }
+  > *:not(img) {
+    min-width: 100%;
     margin: 0;
     padding: 1rem;
     position: absolute;
@@ -183,6 +198,26 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+  > img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(1.01);
+    opacity: 0.5;
+    transition: transform 200ms ease, opacity 200ms linear;
+  }
+  &:hover, &:focus {
+    background-color: black;
+    h1, h2, h3, h4, h5, p {
+      color: white;
+    }
+    > img {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 0.5;
+    }
+  }
+  
 }
 
 

@@ -21,7 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site <?php
+  if (get_field('background_full')) {
+        echo 'full-background';
+      }
+ ?>">
   <a
     class="skip-link screen-reader-text"
     href="#content"><?php esc_html_e( 'Skip to content', 'kingwood-2017' ); ?></a>

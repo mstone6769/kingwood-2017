@@ -54,15 +54,17 @@
 			$posts = get_field('subpages');
 
 			if( $posts ): ?>
-					<div class="container cta-wrapper">
-			    <div class="grid grid-5 collapse">
+					<div class="">
+			    <ul class="grid grid-3 collapse">
 			    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+			    		<li>
 			        <?php setup_postdata($post); ?>
 
-			        	<a href="<?php the_permalink(); ?>"  class="card card-centered card-icon">
+			        	<a href="<?php the_permalink(); ?>"  class="card card-with-image">
 			            <?php the_post_thumbnail(); ?>
-			            <?php the_title( '<h3 style="text-transform: uppercase">', '</h3>' ); ?>
-			            <?php
+			            <div>
+			            	<?php the_title( '<h2>', '</h2>' ); ?>
+			            	<?php
 
 												if(get_field('subtitle'))
 												{
@@ -70,9 +72,11 @@
 												}
 
 										?>
+									</div>
 			        	</a>
+			        </li>
 			    <?php endforeach; ?>
-			    </div>
+			    </ul>
 			    </div>
 			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			<?php endif; ?>
