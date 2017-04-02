@@ -26,20 +26,21 @@ a:active {
 }
 
 
-.button {
+.button, .post-edit-link {
   display: inline-block;
-  padding: 0.5em 1em;
-  min-width: 12em;
+  padding: 0.5rem 1rem;
+  min-width: 10rem;
   text-align: center;
   border: none;
   background-color: $primary;
   color: white;
   font-family: $sans-font;
   font-weight: 600;
-  letter-spacing: .2em;
-  font-size: 1em;
+  letter-spacing: .2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   transition: background-color 200ms linear;
+  line-height: 1.5;
   &:hover, &:focus {
     color: white;
     background-color: $primary-active;

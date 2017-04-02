@@ -194,7 +194,7 @@ if (is_front_page()) { ?>
 				</div>
 			</section>
 			<section class="wrapper cta-wrapper">
-				<h2 class="text-center section-header">Next Steps</h2>
+				<h2 class="text-center section-header"><a href="/next-steps">Next Steps</a></h2>
 				<p class="text-center section-subheader">If you take the next step that God gives you, you will end up where you are supposed to go</p>
 
 				<?php get_template_part( 'template-parts/content', 'next-steps' ); ?>

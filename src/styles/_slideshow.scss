@@ -18,7 +18,13 @@ body {
 
 
 .hero {
+
+ height: calc(100vh - 79.75px);
+ @media #{$media-query-navigation} {
   height: 100vh;
+ }
+
+  
   background-color: $black;
   position: relative;
   overflow: hidden;
@@ -88,6 +94,10 @@ body {
 #simple-slider { 
  overflow: hidden; 
  position: fixed; 
+ //top: 79.75px;
+ // @media #{$media-query-navigation} {
+ //  top: 0;
+ // }
  top: 0;
  left: 0;
  right: 0;
@@ -202,7 +212,7 @@ body {
 } 
 @media screen and (max-width: 960px) { 
  #simple-slider { 
- margin-top: -60px; 
+ //margin-top: -60px; 
  } 
  .simple-slide { 
  padding: 0; 
@@ -227,18 +237,32 @@ body {
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.5);
+
+    @media #{$media-query-navigation} {
+      transform: translateY(0);
+    }
   }
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-30px) scale(0.5);
+    @media #{$media-query-navigation} {
+      transform: translateY(-30px);
+    }
   }
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-15px) scale(0.5);
+    @media #{$media-query-navigation} {
+      transform: translateY(-15px);
+    }
   }
 }
 
 .bounce {
   animation: bounce 2s infinite;
+  opacity: 0.5;
+  @media #{$media-query-navigation} {
+    opacity: 1;
+  }
 }
 
 

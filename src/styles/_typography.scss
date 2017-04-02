@@ -32,9 +32,13 @@ h6 {
 
 h2 {
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.5em;
   letter-spacing: 0.1em;
   font-weight: 200;
+  @media #{$media-query-navigation} {
+    font-size: 2em;
+  }
+
 }
 
 h3 {

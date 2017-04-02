@@ -29,6 +29,7 @@
 .page > .entry-header,
 .site-main > .page-header,
 .entry-header.entry-post {
+
   background-color: $primary;
   background-repeat: no-repeat;
   background-position: center top;
@@ -37,7 +38,12 @@
     background-attachment: fixed;
   }
   color: white;
-  padding-top: 10rem;
+  padding-top: 4rem;
+  @media #{$media-query-navigation} {
+    
+    padding-top: 10rem;
+  }
+  
   padding-bottom: 4rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -53,6 +59,7 @@
 
   .section-subheader {
     max-width: 800px;
+    text-shadow: 0 1px 10px rgba(black, 0.3);
   }
 
   //box-shadow: 0 -5px 100px rgba(black, 0.1) inset;
@@ -72,6 +79,9 @@
     text-align: center;
     > li {
       display: block;
+      > a {
+        display: block;
+      }
       &:not(:last-child) {
         border-bottom: 1px solid rgba(white, 0.1);
       }
@@ -99,6 +109,20 @@
   }
 }
 
+.entry-menu.sibling-menu.entry-menu-top {
+  display: none;
+  @media #{$media-query-navigation} {
+    display: block;
+  }
+}
+
+.entry-menu.sibling-menu.entry-menu-bottom {
+  border-bottom: 1px solid rgba(white, 0.1);
+  @media #{$media-query-navigation} {
+    display: none;
+  }
+}
+
 
 
 
@@ -110,6 +134,7 @@ h1.entry-title, .page-title {
   letter-spacing: .2em;
   text-transform: uppercase;
   font-weight: 100;
+  text-shadow: 0 1px 10px rgba(black, 0.3);
   small {
     font-size: 50%;
     display: block;
@@ -206,7 +231,7 @@ h1.entry-title, .page-title {
   
 
   >, > .wide-section > {
-    p, h1, h2, h3, h4, h5, h6, div {
+    p, h1, h2, h3, h4, h5, h6, div, ul, ol {
       max-width: 800px;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -216,7 +241,7 @@ h1.entry-title, .page-title {
   }
 
   > {
-    p, h1, h2, h3, h4, h5, h6, div {
+    p, h3, h4, h5, h6, div {
       font-size: 1.25em;
     }
   }
@@ -330,21 +355,9 @@ h1.entry-title, .page-title {
 
 
 .post-edit-link {
-  background-color: $black;
   display: block;
-  padding: 1em 1.5em;
-  font-family: $sans-font;
-  text-transform: uppercase;
   margin: 2rem auto;
-  color: white;
-  font-weight: 600;
-  max-width: 120px;
-  letter-spacing: .2em;
-  text-align: center;
-  &:hover, &:focus {
-    color: white;
-    background-color: $primary-active;
-  }
+  max-width: 10rem;
 }
 
 

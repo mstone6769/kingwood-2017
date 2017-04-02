@@ -22,20 +22,22 @@
 
 	?>
 	</header><!-- .entry-header -->
-	<div class="entry-menu">
 
-		<?php
+	<?php
 
 
-		  if (get_field('show_sibling_menu') && shortcode_exists( 'sibling-pages' )) {
-				echo do_shortcode( '[sibling-pages depth="1" sort_column="menu_order"]' );
-			}
+  if (get_field('show_sibling_menu') && shortcode_exists( 'sibling-pages' )) {
+  	echo '<div class="entry-menu sibling-menu entry-menu-top">';
+		echo do_shortcode( '[sibling-pages depth="1" sort_column="menu_order"]' );
+		echo '</div>';
+	}
 
-		  if (get_field('show_child_menu') && shortcode_exists( 'child-pages' )) {
-				echo do_shortcode( '[child-pages depth="1" sort_column="menu_order"]' );
-			}
-		?>
-	</div>
+  if (get_field('show_child_menu') && shortcode_exists( 'child-pages' )) {
+  	echo '<div class="entry-menu child-menu entry-menu-top">';
+		echo do_shortcode( '[child-pages depth="1" sort_column="menu_order"]' );
+		echo '</div>';
+	}
+?>
 
 	<div class="entry-content">
 		<?php
@@ -65,4 +67,12 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-## -->
+
+<?php
+	  if (get_field('show_sibling_menu') && shortcode_exists( 'sibling-pages' )) {
+	  	echo '<div class="entry-menu sibling-menu  entry-menu-bottom">';
+			echo do_shortcode( '[sibling-pages depth="1" sort_column="menu_order"]' );
+			echo '</div>';
+		}
+	?>
 

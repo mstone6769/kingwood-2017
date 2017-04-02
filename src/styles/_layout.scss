@@ -15,21 +15,32 @@
 
 
 // next steps
-.site.full-background, .full-background .content-area {
+.site.full-background,
+.full-background .content-area {
   background-color: $primary;
 }
 
-.full-background .entry-header.entry-post {
-  padding-bottom: 3rem;
-}
-
-.full-background .section-subheader {
-  //margin-bottom: 0;
-}
 
 .full-background {
+  .entry-header.entry-post {
+    padding-bottom: 3rem;
+  }
   .hentry {
     margin-bottom: 0;
+  }
+  .post-edit-link {
+    background-color: $black;
+    &:hover, &:focus {
+      background-color: $primary-active;
+    }
+  }
+  .entry-header {
+    .button,  {
+      background-color: $black;
+      &:hover, &:focus {
+        background-color: $primary-active;
+      }
+    }
   }
 }
 
@@ -38,6 +49,12 @@
 
 .site-content {
   //padding: 1rem;
+  background-color: $primary;
+  padding-top: 79.75px;
+  @media #{$media-query-navigation} {
+    padding-top: 0;
+    background-color: transparent;
+  }
 }
 
 .container {
@@ -183,6 +200,7 @@
   padding-bottom: 56.25%;
   h1, h2, h3, h4, h5, p {
     color: white;
+    text-shadow: 0 1px 10px rgba(black, 0.5);
   }
   h2{
     font-weight: 600;
@@ -214,7 +232,7 @@
     top: 50%;
     width: 100%;
     transform: translate(-50%, -50%) scale(1.01);
-    opacity: 0.5;
+    opacity: 0.7;
     transition: transform 200ms ease, opacity 200ms linear;
   }
   &:hover, &:focus {
@@ -252,6 +270,12 @@
   }
 }
 
+.post-type-archive-wpfc_sermon {
+  .entry-header.entry-post {
+    background-image: url('images/messages.jpg');
+  }
+}
+
 
 .card-icon {
 //  padding-top: 100%;
@@ -273,6 +297,9 @@
   background-color: $primary;
   color: white;
   padding-bottom: 0;
+  a {
+    color: white;
+  }
 }
 
 .site-footer {
