@@ -5,4 +5,4 @@ install:
   - npm install
 script:
   - gulp build
-after_success: gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+after_success: gulp deploy --host $FTP_HOST --user $FTP_USER --password $FTP_PASSWORD

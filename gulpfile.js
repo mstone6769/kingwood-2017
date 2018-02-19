@@ -41,10 +41,10 @@
 
     return gulp.src(['./src/*', './src/**/*'])
         .pipe(sftp({
-            host: 'staging.kingwoodchurch.com',
+            host: args.host,
             user: args.user,
             password: args.password,
-            remotePath: 'staging.kingwoodchurch.com/wp-content/themes/kingwood-2017'
+            remotePath: 'kingwoodchurch.com/wp-content/themes/kingwood-2017'
         }));
   });
 
