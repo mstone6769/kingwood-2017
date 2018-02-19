@@ -60,8 +60,8 @@
     <div class="account-login-wrapper">
       <div class="container">
         <a
-          href="https://kingwood.ccbchurch.com/login.php?rurl=<?php echo $_SERVER['REQUEST_URI']; ?>"
-          onclick="trackOutboundLink('https://kingwood.ccbchurch.com/login.php?rurl=<?php echo $_SERVER['REQUEST_URI']; ?>'); return false;"
+          href="https://kingwood.ccbchurch.com/login.php"
+          onclick="trackOutboundLink('https://kingwood.ccbchurch.com/login.php'); return false;"
           class="account-login"><?php esc_html_e( 'Login to My Kingwood', 'kingwood-2017' ); ?></a>
       </div>
     </div>
