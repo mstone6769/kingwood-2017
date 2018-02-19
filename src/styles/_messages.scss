@@ -96,7 +96,6 @@
 }
 
 
-
 .wpfc_sermon-audio {
   .mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
     background-color: $primary;
@@ -106,6 +105,12 @@
 .wpfc_sermon_image {
   > img {
     display: block;
+  }
+}
+
+.wpfc_sermon_image {
+  > img {
+    margin: 0 !important;
   }
 }
 
