@@ -2,6 +2,7 @@
   'use strict';
 
   var gulp = require('gulp');
+  var cleanCSS = require('gulp-clean-css');
   var minifyCSS = require('gulp-minify-css');
   var sass = require('gulp-sass');
   var browserSync = require('browser-sync').create();
@@ -15,7 +16,7 @@
         browsers: ['last 2 versions'],
         cascade: false
       }))
-      .pipe(minifyCSS())
+      .pipe(cleanCSS())
       .pipe(gulp.dest('./src'))
       .pipe(browserSync.stream());
   });
