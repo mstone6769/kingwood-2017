@@ -227,7 +227,7 @@ function change_sermon_image_sizes() {
 
 	}
 }
-add_action( 'admin_init', 'change_sermon_image_sizes', 11 );
+add_action( 'after_setup_theme', 'change_sermon_image_sizes', 11 );
 
 
 function modify_archive_title( $title ) { 
@@ -255,40 +255,32 @@ function form_link($atts, $content = null) {
         "to" => ''
     ), $atts));
     return  '<div class="page-form-button">'.
-    				'<button '.
-						'  class="button hide-for-mobile"'.
-						'  type="button"'.
-						'  onclick="togglePageForm()">'.
-						   $content.
-						'</button>'.
-						'<a href="'.$to.'" target="_blank" class="button show-for-mobile-only">'.
+						'<a href="'.$to.'" onclick="trackLink(\''.$to.'\', \'forms\'); return false;" class="button">'.
 						  $content.
-						'</a></div>'.
-						'<iframe'.
-						'  id="page_form"'.
-						'  class="form-iframe"'.
-						'  src="'.$to.'">'.
-						'</iframe>'.
-						'<script>'.
-						'	var pageFormState = true;'.
-						'	togglePageForm();'.
-						'	function togglePageForm() {'.
-						'		var pageForm = document.getElementById(\'page_form\');'.
-						'		pageFormState = !pageFormState;'.
-						'		pageForm.style.display = (pageFormState) ? \'\' : \'none\';'.
-						'		if (pageFormState) {'.
-						'			pageForm.scrollIntoView({ '.
-						'			  behavior: \'smooth\' '.
-						'			});'.
-						'		}'.
-						'	}'.
-						'</script>';
+						'</a></div>';
 }
 
 
 
 
 add_shortcode("form-link", "form_link");
+
+
+// Custom Scripting to Move JavaScript from the Head to the Footer
+
+function remove_head_scripts() { 
+   remove_action('wp_head', 'wp_print_scripts'); 
+   remove_action('wp_head', 'wp_print_head_scripts', 9); 
+   remove_action('wp_head', 'wp_enqueue_scripts', 1);
+
+   add_action('wp_footer', 'wp_print_scripts', 5);
+   add_action('wp_footer', 'wp_enqueue_scripts', 5);
+   add_action('wp_footer', 'wp_print_head_scripts', 5); 
+} 
+add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
+
+ 
+// END Custom Scripting to Move JavaScript
 
 
 /**

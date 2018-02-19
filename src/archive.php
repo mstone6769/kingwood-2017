@@ -18,7 +18,7 @@ get_header(); ?>
 			<header class="entry-header entry-post">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
+					//the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 			<div class="container posts-container">

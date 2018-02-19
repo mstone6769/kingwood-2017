@@ -10,6 +10,7 @@
 
 
   if( $posts ): ?>
+    <div class="cta-wrapper">
       <ul class="grid grid-3 collapse">
       <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
           <li>
@@ -36,5 +37,6 @@
           </li>
       <?php endforeach; ?>
       </ul>
+     </div>
       <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
   <?php endif; ?>

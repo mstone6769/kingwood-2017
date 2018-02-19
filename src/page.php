@@ -60,12 +60,11 @@ if (is_front_page()) { ?>
 								'offset'           => 0,
 								'category'         => '',
 								'category_name'    => '',
-								'orderby'          => 'sermon_date',
-								'order'            => 'ASC',
+								'orderby'          => 'meta_value',
+								'meta_key'         => 'sermon_date',
+								'order'            => 'DESC',
 								'include'          => '',
 								'exclude'          => '',
-								'meta_key'         => '',
-								'meta_value'       => '',
 								'post_type'        => 'wpfc_sermon',
 								'post_mime_type'   => '',
 								'post_parent'      => '',
@@ -78,7 +77,7 @@ if (is_front_page()) { ?>
 
 							 ?>
 							<a href="<?=esc_url( get_permalink($latest_cpt[0]->ID) ); ?>" rel="bookmark" class="card shade">
-								<?=get_the_post_thumbnail($latest_cpt[0]->ID, 'sermon_small'); ?>
+								<?=get_the_post_thumbnail($latest_cpt[0]->ID, 'thumbnail'); ?>
 								<h2><span>Latest Message:</span> <?=get_the_title($latest_cpt[0]->ID); ?></h2>
 							</a>
 						</div>
@@ -183,7 +182,7 @@ if (is_front_page()) { ?>
 								   setup_postdata( $post );  ?>
 
 								<a href="<?=esc_url( get_permalink() ); ?>" rel="bookmark" class="card shade">
-									<?=get_the_post_thumbnail($post_object->ID, 'sermon_small'); ?>
+									<?=get_the_post_thumbnail($post_object->ID, 'thumbnail'); ?>
 									<h2><?=get_field('event_dates'); ?></h2>
 								</a>
 								<?php  wp_reset_postdata(); ?>
