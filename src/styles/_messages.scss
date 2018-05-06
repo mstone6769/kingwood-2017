@@ -6,17 +6,26 @@
   > * {
     flex: 1 100%;
   }
-  .wpfc_sermon_image {
+  .wpfc-sermon-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .wpfc-sermon-image > a {
+    display: block;
     width: 100%;
     padding-bottom: 56.25%;
-    background: $primary url('images/podcast-placeholder.svg') no-repeat;
-    background-size: cover;
+    
+    
     position: relative;
-    > a {
+    > .wpfc-sermon-image-img {
+      background: $primary url('images/podcast-placeholder.svg') no-repeat;
+      background-size: cover;
       display: block;
       position: absolute;
       left: 0;
       top:0;
+      width: 100%;
+      height: 100%;
     }
   }
   > .wpfc_sermon {
@@ -63,7 +72,8 @@
       display: none;
     }
 
-    .wpfc_sermon_meta {
+    .wpfc-sermon-footer,
+    .wpfc-sermon-main {
       display: none;
     }
     .wpfc_sermon-audio {
