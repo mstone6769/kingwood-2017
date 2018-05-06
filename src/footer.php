@@ -125,19 +125,24 @@ function trackAudioPlayer(action) {
   ga('send', 'event', 'audio', action, location.pathname);
 }
 
-var audoPlayer = document.querySelector('.wpfc-sermon-player');
+var audioPlayer = document.querySelector('.wpfc-sermon-player');
 
-audoPlayer.onplay = function() {
-   trackAudioPlayer('play');
-};
+if (audioPlayer) {
+  audioPlayer.onplay = function() {
+    trackAudioPlayer('play');
+  };
 
-audoPlayer.onpause = function() {
-  trackAudioPlayer('pause');
-};
+  audioPlayer.onpause = function() {
+    trackAudioPlayer('pause');
+  };
 
-audoPlayer.onended = function() {
-  trackAudioPlayer('completed');
-};
+  audioPlayer.onended = function() {
+    trackAudioPlayer('completed');
+  };
+
+}
+
+
 
 </script>
 <script type="text/javascript">
