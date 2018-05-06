@@ -162,9 +162,6 @@
 .wpfc_sermon-audio {
   padding: 1rem 0;
 }
-.wpfc_sermon-template-default.single {
-
-}
 
 .entry-post + .entry-content .wpfc-sermon-single-inner {
   position: relative;
@@ -183,12 +180,7 @@
 }
 
 .wpfc-sermon-single-meta-item {
-  display: inline-block;
   margin-bottom: 2rem;
-}
-
-.wpfc-sermon-single-meta {
-  display: inline-block;
 }
 
 .wpfc-sermon-single-header {
@@ -198,21 +190,25 @@
     display: none;
   }
   .wpfc-sermon-single-meta-service {
-    display: none;
+    display: none !important;
   }
 
   text-transform: uppercase;
   @media (min-width: 640px) {
+    .wpfc-sermon-single-meta {
+      display: inline-block;
+    }
 
     .wpfc-sermon-single-meta-date,
     .wpfc-sermon-single-meta-preacher,
     .wpfc-sermon-single-meta-series
      {
       display: inline-block;
-      &:nth-child(1), &:nth-child(2) {
-        padding-right: 1em;
-      }
-      
+    }
+
+    .wpfc-sermon-single-meta-date,
+    .wpfc-sermon-single-meta-preacher {
+      padding-right: 1rem;
     }
   }
 }
