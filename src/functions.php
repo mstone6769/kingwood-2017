@@ -108,6 +108,9 @@ add_action( 'widgets_init', 'kingwood_2017_widgets_init' );
 function kingwood_2017_scripts() {
 	wp_enqueue_style( 'kingwood-2017-style', get_stylesheet_uri() );
 
+	wp_register_style( 'kingwood-2017-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,700' );
+	wp_enqueue_style('kingwood-2017-fonts');
+
 	wp_enqueue_script( 'kingwood-2017-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'kingwood-2017-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
