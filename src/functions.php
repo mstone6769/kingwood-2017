@@ -123,6 +123,26 @@ function kingwood_2017_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'kingwood_2017_scripts' );
 
+/**
+ * Additional urls are passed from external resources to anonymous function
+ */
+
+function modify_superpwa_sw_template ($template) {
+	$additional_urls = [];
+	$urls_list = [
+	  '\'https://fonts.googleapis.com/css?family=Montserrat:300,700\''
+	];
+	$urls_list = is_array($urls_list) ? $urls_list : [];
+	$urls_list = array_merge($additional_urls, $urls_list);
+	$pattern = '/(const filesToCache = \[.*)(\];)/';
+	$replacement = sprintf('\\1%s\\2', count($urls_list) >= 2 ? ', \'' . implode('\',\'', $urls_list) . '\'' : ( count($urls_list) > 0 ? ', ' . $urls_list[0] : ''));
+	return preg_replace($pattern, $replacement, $template);
+}
+
+add_filter('superpwa_sw_template', 'modify_superpwa_sw_template');
+
+
+
 
 
 
