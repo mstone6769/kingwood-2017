@@ -1,3 +1,21 @@
+.background-image {
+  display: block;
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+  background-color: $primary;
+  background-size: cover;
+  background-repeat: no-repeat;
+  > img {
+    display: none;
+  }
+}
+
+.audio-image {
+  background-image: url('images/podcast-placeholder.svg');
+}
+
+
 .posts-container {
   display: flex;
   flex-flow: row wrap;
@@ -115,7 +133,7 @@
 .wpfc_sermon.hentry {
   display: flex;
   flex-flow: column;
-  > * {
+  > *:not(.background-image) {
     flex: 1 100%;
   }
   // > .entry-content {
