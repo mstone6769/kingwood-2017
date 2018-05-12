@@ -1,3 +1,3 @@
 <?php defined( 'ABSPATH' ) or exit; ?>
-</main>
+  </main>
 </div>
