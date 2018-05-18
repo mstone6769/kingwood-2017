@@ -302,6 +302,15 @@ function remove_head_scripts() {
 } 
 add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
 
+function get_taxonony_toDisplay($post_id, $taxonomy_name) {
+	$terms = wp_get_post_terms($post_id, $taxonomy_name);
+	$count = count($terms);
+	if ( $count > 0 ) {
+		foreach ( $terms as $term ) {
+			echo $term->name . " ";
+		}
+	}
+	}
  
 // END Custom Scripting to Move JavaScript
 

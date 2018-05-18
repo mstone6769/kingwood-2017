@@ -59,6 +59,14 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<svg style="display: none;">
+	<circle id="play-button-circle" name="play-button-circle" cx="514.065" cy="504.152" r="477.545"/>
+  <polygon id="play-button-triangle" name="play-button-triangle" points="383,510.151 383,318.502 548.696,414.327 714.529,510.151 548.765,605.976 383,701.801 "/>
+  <symbol viewbox="0,0 70,100" id="pause-icon">
+	  <path d="M0,0 0,100 25,100 25,0z M45,0 45,100 70,100 70,0z" />
+  </symbol>
+</svg>
+
 <?php wp_footer(); ?>
 <?php
 
@@ -125,9 +133,29 @@ function trackAudioPlayer(action) {
   ga('send', 'event', 'audio', action, location.pathname);
 }
 
-var audioPlayer = document.querySelector('.wpfc-sermon-player');
+var audioPlayer = document.querySelector('#entry-audio-player');
+
+var audioTrigger = document.querySelector('#entry-thumbnail');
+
+
+var playing = false;
+
+function toggleAudio() {
+  if (playing) {
+    audioPlayer.pause();
+    playing = false;
+    audioTrigger.classList.remove('playing');
+  } else {
+    audioPlayer.play();
+    playing = true;
+    audioTrigger.classList.add('playing');
+  }
+}
+
+
 
 if (audioPlayer) {
+  
   audioPlayer.onplay = function() {
     trackAudioPlayer('play');
   };
