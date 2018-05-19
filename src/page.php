@@ -127,27 +127,6 @@ if (is_front_page()) { ?>
 						endif;
 
 ?>
-					
-						<!-- 
-						<li>
-						  <a href="" class="card card-with-image">
-						  	<img src="/wp-content/themes/kingwood-2017/images/kids.jpg">
-						  	<h3>Children's Programs</h3>
-						  </a>
-						</li>
-						<li>
-						  <a href="" class="card card-with-image">
-						  	<img src="/wp-content/themes/kingwood-2017/images/faq.jpg">
-						  	<h3>FAQs</h3>
-						  </a>
-						</li>
-						<li>
-						  <a href="" class="card card-with-image">
-						  	<img src="/wp-content/themes/kingwood-2017/images/directions.jpg">
-						  	<h3>Directions</h3>
-						  </a>
-						</li>
-					</ul> -->
 				</div>
 			</section>
 			<section class="wrapper cream">

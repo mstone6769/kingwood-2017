@@ -67,6 +67,20 @@
             <div><?php echo the_terms($post->ID,'wpfc_sermon_series','Series: ',', ',''); ?></div>
        </div>
 
+       <?php if ( get_field('sermon_audio') ) : ?>
+       <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+            <a href="<?php the_field('sermon_audio'); ?>" onclick="trackLink('<?php the_field('sermon_audio'); ?>', 'm4a'); return false;" class="button">
+            Download
+            </a>
+        </div>
+        <?php endif; ?>
+
+       <div class="entry-podcast" style="text-align: center; margin-top: 2rem; margin-bottom: 1rem;">
+        <a href="https://itunes.apple.com/us/podcast/kingwood-church/id351065868?mt=2" onclick="trackOutboundLink('https://itunes.apple.com/us/podcast/kingwood-church/id351065868?mt=2'); return false;">
+          Subscribe on Apple Podcasts
+        </a>
+       </div>
+
 		<?php
 
 			wp_link_pages( array(
