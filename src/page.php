@@ -76,7 +76,7 @@ if (is_front_page()) { ?>
 							$latest_cpt = get_posts($args);
 
 							 ?>
-							<a href="<?=esc_url( get_permalink($latest_cpt[0]->ID) ); ?>" rel="bookmark" class="card shade">
+							<a href="<?=esc_url( get_permalink($latest_cpt[0]->ID) ); ?>" rel="bookmark" class="card cream">
 								<?=get_the_post_thumbnail($latest_cpt[0]->ID, 'thumbnail'); ?>
 								<h2><span>Latest Message:</span> <?=get_the_title($latest_cpt[0]->ID); ?></h2>
 							</a>
@@ -150,7 +150,7 @@ if (is_front_page()) { ?>
 					</ul> -->
 				</div>
 			</section>
-			<section class="wrapper shade">
+			<section class="wrapper cream">
 				<div class="container">
 					
 					<div class="grid grid-2">
@@ -181,7 +181,7 @@ if (is_front_page()) { ?>
 								   $post = $post_object;
 								   setup_postdata( $post );  ?>
 
-								<a href="<?=esc_url( get_permalink() ); ?>" rel="bookmark" class="card shade">
+								<a href="<?=esc_url( get_permalink() ); ?>" rel="bookmark" class="card cream">
 									<?=get_the_post_thumbnail($post_object->ID, 'thumbnail'); ?>
 									<h2><?=get_field('event_dates'); ?></h2>
 								</a>

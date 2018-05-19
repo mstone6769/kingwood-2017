@@ -178,16 +178,13 @@
       color: $primary-active;
     }
   }
-  &.shade {
+  &.cream {
     background-color: $cream;
     h2 {
       font-weight: 600;
       font-size: 1.25em;
       margin: 0;
       padding: 1rem;
-    }
-    img {
-
     }
   }
 }
@@ -259,11 +256,11 @@
 .wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  &.shade {
+  &.cream {
     background: $cream url('images/upcoming-events.jpg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    .card.shade {
+    .card.cream {
       background-color: $white;
       box-shadow: 0 1px 10px rgba(black, 0.1);
     }
