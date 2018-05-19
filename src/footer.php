@@ -143,12 +143,8 @@ var playing = false;
 function toggleAudio() {
   if (playing) {
     audioPlayer.pause();
-    playing = false;
-    audioTrigger.classList.remove('playing');
   } else {
-    audioPlayer.play();
-    playing = true;
-    audioTrigger.classList.add('playing');
+    audioPlayer.play(); 
   }
 }
 
@@ -158,14 +154,20 @@ if (audioPlayer) {
   
   audioPlayer.onplay = function() {
     trackAudioPlayer('play');
+    playing = true;
+    audioTrigger.classList.add('playing');
   };
 
   audioPlayer.onpause = function() {
     trackAudioPlayer('pause');
+    playing = false;
+    audioTrigger.classList.remove('playing');
   };
 
   audioPlayer.onended = function() {
     trackAudioPlayer('completed');
+    playing = false;
+    audioTrigger.classList.remove('playing');
   };
 
 }
