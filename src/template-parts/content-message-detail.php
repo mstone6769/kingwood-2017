@@ -34,9 +34,9 @@
         <div class="entry-thumbnail-container">
             <a style="display: block" href="javascript:;" onclick="toggleAudio()" class="entry-thumbnail" id="entry-thumbnail">
                 <div>
-                    <div class="audio-image background-image" <?php if ( has_post_thumbnail() ) : ?>style="background-image: url('<?php the_post_thumbnail_url(); ?>')"<?php endif; ?>>
+                    <div class="audio-image background-image" <?php if ( has_post_thumbnail() ) : ?>style="background-image: url('<?php the_post_thumbnail_url('large'); ?>')"<?php endif; ?>>
                         <?php if ( has_post_thumbnail() ) : ?>
-                            <img src="<?php the_post_thumbnail_url(); ?>"/>
+                            <img src="<?php the_post_thumbnail_url('large'); ?>"/>
                         <?php endif; ?>
                     </div>
                     <span class="entry-play">
@@ -52,6 +52,13 @@
                     </span>
                 </div>
             </a>
+            <?php if ( get_field('sermon_audio') ) : ?>
+            <div class="entry-audio">
+                <audio id="entry-audio-player" controls="" preload="metadata" class="entry-audio">
+                    <source src="<?php the_field('sermon_audio'); ?>">
+                </audio>
+            </div>
+            <?php endif; ?>
         </div>
         
         <div class="entry-meta">
@@ -59,13 +66,6 @@
             <div><?php echo the_terms($post->ID,'wpfc_preacher','',', ',' '); ?></div>
             <div><?php echo the_terms($post->ID,'wpfc_sermon_series','Series: ',', ',''); ?></div>
        </div>
-       <?php if ( get_field('sermon_audio') ) : ?>
-        <div class="entry-audio">
-            <audio id="entry-audio-player" controls="" preload="metadata" class="entry-audio">
-                <source src="<?php the_field('sermon_audio'); ?>">
-            </audio>
-        </div>
-        <?php endif; ?>
 
 		<?php
 
